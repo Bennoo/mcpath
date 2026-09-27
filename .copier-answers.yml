@@ -1,0 +1,6 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: ab2545c
+_src_path: gh:Bennoo/devcontainer_template
+include_postgres: false
+project_name: mcpath
+python_version: '3.14'
