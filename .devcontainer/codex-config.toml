@@ -1,0 +1,15 @@
+# Codex CLI config. Codex reads this from $CODEX_HOME/config.toml (default
+# ~/.codex/config.toml). The Dockerfile copies this file into place so MCP
+# servers are pre-configured in every container.
+#
+# Both LangChain MCPs are HTTP-based, but Codex's most portable MCP schema
+# is stdio (command/args/env). We bridge HTTP -> stdio with mcp-remote
+# (https://www.npmjs.com/package/mcp-remote), launched on demand via npx.
+
+[mcp_servers.docs-langchain]
+command = "npx"
+args = ["-y", "mcp-remote", "https://docs.langchain.com/mcp"]
+
+[mcp_servers.reference-langchain]
+command = "npx"
+args = ["-y", "mcp-remote", "https://reference.langchain.com/mcp"]

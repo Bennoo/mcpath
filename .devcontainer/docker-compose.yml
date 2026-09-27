@@ -1,0 +1,21 @@
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces/mcpath:cached
+      - mcpath-uv-cache:/home/vscode/.cache/uv
+      - ${HOME}/.claude:/home/vscode/.claude:cached
+      - ${HOME}/.claude.json:/home/vscode/.claude.json:cached
+      - ${HOME}/.deepagents:/home/vscode/.deepagents:cached
+    env_file:
+      - .env
+
+    command: sleep infinity
+
+
+
+volumes:
+  mcpath-uv-cache:
+

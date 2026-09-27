@@ -1,0 +1,36 @@
+{
+  "name": "mcpath",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/mcpath",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/guiyomh/features/just:0": {}
+  },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    // uv hardlinks by default; that fails across the devcontainer overlay fs,
+    // so fall back to copying. Silences a noisy warning on every `uv sync`.
+    "UV_LINK_MODE": "copy",
+    "UV_PYTHON_INSTALL_DIR": "/usr/local/uv/python"
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "astral-sh.ty",
+        "davidanson.vscode-markdownlint",
+        "github.vscode-pull-request-github",
+        "github.vscode-github-actions",
+        "redhat.vscode-yaml",
+        "editorconfig.editorconfig"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+        "python.terminal.activateEnvironment": false
+      }
+    }
+  }
+}
