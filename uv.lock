@@ -812,13 +812,13 @@ name = "mcpath"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "bashlex" },
     { name = "fastmcp" },
     { name = "fsspec" },
 ]
 
 [package.dev-dependencies]
 dev = [
-    { name = "bashlex" },
     { name = "ipykernel" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
@@ -826,13 +826,13 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "bashlex", specifier = ">=0.18" },
     { name = "fastmcp", specifier = ">=4.0.10" },
     { name = "fsspec", specifier = ">=2026.9.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "bashlex", specifier = ">=0.18" },
     { name = "ipykernel", specifier = ">=7.3.0" },
     { name = "pytest", specifier = ">=9.1.1" },
     { name = "pytest-asyncio", specifier = ">=1.4.0" },

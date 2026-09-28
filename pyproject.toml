@@ -10,6 +10,7 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "bashlex>=0.18",
     "fastmcp>=4.0.10",
     "fsspec>=2026.9.0",
 ]
@@ -23,7 +24,6 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "bashlex>=0.18",
     "ipykernel>=7.3.0",
     "pytest>=9.1.1",
     "pytest-asyncio>=1.4.0",
