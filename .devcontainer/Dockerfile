@@ -1,11 +1,12 @@
-# Stage 1: install Node.js 22 + OpenAI Codex + MCP Inspector globally, then
-# bundle into a tarball. We use tar because COPY --from dereferences
-# single-file symlinks, which breaks npm/npx/codex (they are symlinks into
-# node_modules). tar preserves them as symlinks; extraction in stage 2
-# restores the layout.
-# MCP Inspector v2 needs Node >= 22.19, which the node:22 tag provides.
+# Stage 1: install Node.js 22 + OpenAI Codex + MCP Inspector + OpenWiki
+# globally, then bundle into a tarball. We use tar because COPY --from
+# dereferences single-file symlinks, which breaks npm/npx/codex (they are
+# symlinks into node_modules). tar preserves them as symlinks; extraction in
+# stage 2 restores the layout.
+# MCP Inspector v2 needs Node >= 22.19 and OpenWiki needs Node >= 22.22,
+# which the node:22 tag provides.
 FROM node:22-bookworm-slim AS node-installer
-RUN npm install -g @openai/codex @modelcontextprotocol/inspector@2 \
+RUN npm install -g @openai/codex @modelcontextprotocol/inspector@2 openwiki \
     && tar -czf /tmp/node-runtime.tar.gz \
         -C / \
         usr/local/bin/node \
@@ -13,6 +14,7 @@ RUN npm install -g @openai/codex @modelcontextprotocol/inspector@2 \
         usr/local/bin/npx \
         usr/local/bin/codex \
         usr/local/bin/mcp-inspector \
+        usr/local/bin/openwiki \
         usr/local/lib/node_modules
 
 # Stage 2: final dev container image.
@@ -34,7 +36,8 @@ COPY --from=node-installer /tmp/node-runtime.tar.gz /tmp/node-runtime.tar.gz
 RUN tar -xzf /tmp/node-runtime.tar.gz -C / \
     && rm /tmp/node-runtime.tar.gz \
     && node --version && npm --version && codex --version \
-    && test -x /usr/local/bin/mcp-inspector  # (it has no --version: that would start it)
+    && test -x /usr/local/bin/mcp-inspector \
+    && test -x /usr/local/bin/openwiki  # (plain file checks: running these could start them)
 
 # Install uv system-wide so every user (and image layers) can use it.
 # UV_INSTALL_DIR overrides uv's default (~/.local/bin) for a shared location.

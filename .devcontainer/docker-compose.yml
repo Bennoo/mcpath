@@ -9,6 +9,7 @@ services:
       - ${HOME}/.claude:/home/vscode/.claude:cached
       - ${HOME}/.claude.json:/home/vscode/.claude.json:cached
       - ${HOME}/.deepagents:/home/vscode/.deepagents:cached
+      - ${HOME}/.openwiki:/home/vscode/.openwiki:cached
     env_file:
       - .env
     ports:
