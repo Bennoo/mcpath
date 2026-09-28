@@ -9,7 +9,9 @@ authors = [
     { name = "BEN", email = "toussaint.benoit@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "fsspec>=2026.9.0",
+]
 
 [project.scripts]
 mcpath = "mcpath:main"
