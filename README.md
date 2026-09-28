@@ -1,11 +1,14 @@
 # mcpath
 
-**Give your agent a shell, not the keys to your machine.**
+**The coding-agent workflow, for agents that have no shell.**
 
-mcpath is an [MCP](https://modelcontextprotocol.io) server that mounts one folder as a
-virtual, bash-like shell. Agents get the tools they already know (`ls`, `cat`, `grep`,
-`find`, pipes, redirections, heredocs) without a real process ever being spawned. Every
-command is implemented in Python, and every file access goes through one small jail.
+mcpath is an [MCP](https://modelcontextprotocol.io) server that gives any agent the
+explore → read → edit → verify loop that makes coding harnesses like Claude Code
+effective, on a folder you choose, with no sandbox to set up. It mounts that folder as a
+virtual, bash-like shell: the agent gets the tools it already knows (`ls`, `cat`, `grep`,
+`find`, pipes, redirections, heredocs) plus a precise `edit` tool, and no real process
+is ever spawned. Every command is implemented in Python, and every file access goes
+through one small jail.
 
 ```console
 $ ls
@@ -24,23 +27,37 @@ cat: .env: Permission denied
 
 ## Why
 
-Agents are fluent in bash. They are much less fluent in a dozen bespoke `read_file`,
-`list_directory` and `search_files` tools, and chaining them costs a round trip per step.
-But giving an agent a real shell means giving it `curl`, `python`, your SSH keys and
-your whole disk.
+Coding agents got good at working with files because their harness gives them a shell.
+They explore with `ls` and `grep`, read the lines they need, make a targeted edit, then
+check the result. Today's models are trained on that loop.
 
-mcpath gives you the fluency without the blast radius:
+Conversational agents usually get none of it. A chat assistant, a support bot or an
+agent inside your app has no sandbox to run commands in, so it gets a handful of bespoke
+`read_file` and `search_files` tools instead. The same model is much clumsier with
+those, and chaining them costs a round trip per step.
 
+mcpath brings the loop to those agents without handing them a real shell:
+
+- **No sandbox needed.** Commands are Python builtins that run inside the server. There
+  are no containers, no VMs and no processes to manage.
+- **Your data stays where it is.** The root can be a local folder or any
+  [fsspec](https://filesystem-spec.readthedocs.io) URL: `s3://`, `gcs://`, `zip://`,
+  `memory://`… Nothing is uploaded, and edits land in your storage.
+- **Any client, any model.** Anything that speaks MCP can use it: Claude Desktop,
+  other chat clients, or your own agent.
 - **One folder, mounted at `/`.** `..` cannot climb out, and symlinks that point
   outside the root are refused.
-- **No processes.** There is no `python`, no `curl` and no network. Only the builtins
-  listed below exist.
+- **No code execution.** There is no `python`, no `curl` and no network. Only the
+  builtins listed below exist.
 - **Secrets stay hidden.** `.git`, `.env`, `.env.*`, `*.pem` and `*.key` are denied and
   left out of listings. Add your own patterns with `--deny`.
 - **Read-only mode.** One flag refuses every write and removes the `edit` tool.
-- **Any filesystem.** The root can be a local folder or any
-  [fsspec](https://filesystem-spec.readthedocs.io) URL: `memory://`, `s3://`, `gcs://`,
-  `zip://`…
+
+### When not to use it
+
+If your agent already runs in a sandbox with a real shell, as Claude Code or Codex do on
+your machine, keep that shell. It has `git`, `python` and every flag of every command,
+and mcpath will never match it. mcpath is for the agents that have no shell at all.
 
 ## Quick start
 
