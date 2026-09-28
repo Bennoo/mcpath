@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from . import ast as a
 from .builtins import BUILTINS, Builtin
 from .context import CommandContext, FileOutput, Input, Output, Session, Streams
-from .expand import expand_string, expand_words
+from .expand import expand_assignment, expand_string, expand_word, expand_words
 from .parser import ParseError, parse
 from ..vfs import VFS
 
@@ -43,6 +43,13 @@ class RunResult:
 
 class _LoopLimit(Exception):
     pass
+
+
+class _Ambiguous(Exception):
+    """A redirect target that expanded to zero or several words."""
+
+    def __init__(self, target: a.Word) -> None:
+        super().__init__("".join(getattr(p, "text", "$…") for p in target.parts))
 
 
 class Shell:
@@ -104,7 +111,7 @@ class _Executor:
     def _simple(self, cmd: a.SimpleCommand, io: Streams, s: Session) -> int:
         argv = expand_words(cmd.words, s, self._substitute(io, s))
         values = {
-            asg.name: expand_string(asg.value, s, self._substitute(io, s))
+            asg.name: expand_assignment(asg.value, s, self._substitute(io, s))
             for asg in cmd.assignments
         }
         if not argv:
@@ -154,7 +161,10 @@ class _Executor:
             for r in redirects:
                 match r:
                     case a.FileRedirect(fd, op, target):
-                        vpath = s.vfs.resolve(expand_string(target, s, sub), s.cwd)
+                        fields = expand_word(target, s, sub)
+                        if len(fields) != 1:
+                            raise _Ambiguous(target)
+                        vpath = s.vfs.resolve(fields[0], s.cwd)
                         if op == "<":
                             data = b"" if vpath == DEV_NULL else s.vfs.read_bytes(vpath)
                             fds[fd] = Input(data)
@@ -175,6 +185,10 @@ class _Executor:
         except OSError as e:
             path = e.filename or ""
             io.stderr.write(f"mcpath: {path}: {e.strerror}\n".encode())
+            self._close(opened, io)
+            return 1
+        except _Ambiguous as e:
+            io.stderr.write(f"mcpath: {e}: ambiguous redirect\n".encode())
             self._close(opened, io)
             return 1
 
