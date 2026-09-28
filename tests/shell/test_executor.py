@@ -97,7 +97,8 @@ def test_bad_flag_teaches(sh) -> None:
 def test_command_not_found_lists_builtins(sh) -> None:
     out, code = run(sh, "awk '{print}' README.md")
     assert code == 127
-    assert out.startswith("mcpath: awk: command not found (available: cat cd echo")
+    assert out.startswith("mcpath: awk: command not found (available: ")
+    assert " grep " in out and " find " in out
 
 
 def test_denied_file(sh) -> None:

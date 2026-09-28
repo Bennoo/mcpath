@@ -7,6 +7,7 @@ what those are.
 """
 
 import copy
+from collections.abc import Callable
 from dataclasses import dataclass, field
 
 from ..vfs import VFS
@@ -113,6 +114,8 @@ class CommandContext:
     streams: Streams
     session: Session
     env: dict[str, str]  # session env plus `X=1 cmd` prefix assignments
+    # Run another command (argv) with the given streams: `find -exec`, `xargs`.
+    run_command: Callable[[list[str], "Streams"], int]
 
     @property
     def name(self) -> str:
@@ -147,3 +150,16 @@ class CommandContext:
     def os_error(self, path: str, e: OSError) -> None:
         """`cat: missing.txt: No such file or directory`."""
         self.error(f"{path}: {e.strerror}")
+
+    def usage_error(self, message: str) -> None:
+        """A usage mistake, followed by GNU's pointer to --help (which works here)."""
+        self.error(message)
+        self.streams.stderr.write(f"Try '{self.name} --help' for more information.\n".encode())
+
+
+class BuiltinExit(Exception):
+    """Raised by a builtin (e.g. after printing --help) to exit with `code` right away."""
+
+    def __init__(self, code: int) -> None:
+        super().__init__(code)
+        self.code = code

@@ -142,7 +142,7 @@ def _brace_group(items: list[_Item], start: int) -> tuple[int, list[list[_Item]]
                 inside = items[start + 1 : i]
                 if commas:
                     bounds = [start, *commas, i]
-                    return i, [items[b + 1 : e] for b, e in zip(bounds, bounds[1:])]
+                    return i, [items[b + 1 : e] for b, e in zip(bounds, bounds[1:], strict=False)]
                 seq = _sequence(inside)
                 return (i, seq) if seq is not None else None
         elif c == "," and depth == 1:

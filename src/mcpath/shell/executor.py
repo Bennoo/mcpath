@@ -19,7 +19,7 @@ from dataclasses import dataclass
 
 from . import ast as a
 from .builtins import BUILTINS, Builtin
-from .context import CommandContext, FileOutput, Input, Output, Session, Streams
+from .context import BuiltinExit, CommandContext, FileOutput, Input, Output, Session, Streams
 from .expand import expand_assignment, expand_string, expand_word, expand_words
 from .parser import ParseError, parse
 from ..vfs import VFS
@@ -35,10 +35,24 @@ class RunResult:
     output: bytes  # stdout and stderr, interleaved like a terminal
     exit_code: int
     cwd: str
+    stdout: bytes = b""  # the same output, separated
+    stderr: bytes = b""
 
     @property
     def text(self) -> str:
         return self.output.decode(errors="replace")
+
+
+class _Tee(Output):
+    """Writes to the shared terminal and to its own buffer."""
+
+    def __init__(self, terminal: Output) -> None:
+        super().__init__()
+        self.terminal = terminal
+
+    def write(self, data: bytes) -> None:
+        super().write(data)
+        self.terminal.write(data)
 
 
 class _LoopLimit(Exception):
@@ -61,19 +75,22 @@ class Shell:
 
     def run(self, source: str) -> RunResult:
         terminal = Output()
-        streams = Streams(stdin=Input(), stdout=terminal, stderr=terminal)
+        stdout, stderr = _Tee(terminal), _Tee(terminal)
+        streams = Streams(stdin=Input(), stdout=stdout, stderr=stderr)
         try:
             status = _Executor(self.builtins).exec(parse(source), streams, self.session)
         except ParseError as e:
-            terminal.write(f"mcpath: {e}\n".encode())
+            stderr.write(f"mcpath: {e}\n".encode())
             status = 2
         except _LoopLimit:
-            terminal.write(
+            stderr.write(
                 f"mcpath: loop stopped after {MAX_LOOP_ITERATIONS} iterations\n".encode()
             )
             status = 1
         self.session.last_status = status
-        return RunResult(terminal.getvalue(), status, self.session.cwd)
+        return RunResult(
+            terminal.getvalue(), status, self.session.cwd, stdout.getvalue(), stderr.getvalue()
+        )
 
 
 class _Executor:
@@ -97,7 +114,7 @@ class _Executor:
                 status = self._with_redirects(redirects, io, s, lambda io2: self.exec(body, io2, s.copy()))
             case a.Group(body, redirects):
                 status = self._with_redirects(redirects, io, s, lambda io2: self.exec(body, io2, s))
-            case a.If(branches, else_body, redirects):
+            case a.If(_, _, redirects):
                 status = self._with_redirects(redirects, io, s, lambda io2: self._if(node, io2, s))
             case a.For(_, _, _, redirects):
                 status = self._with_redirects(redirects, io, s, lambda io2: self._for(node, io2, s))
@@ -119,6 +136,19 @@ class _Executor:
             s.env.update(values)
             return self._with_redirects(cmd.redirects, io, s, lambda _: 0)
 
+        # `X=1 cmd` sets X only for that command.
+        return self._with_redirects(
+            cmd.redirects, io, s, lambda io2: self._run_argv(argv, io2, s, values)
+        )
+
+    def _run_argv(
+        self, argv: list[str], io: Streams, s: Session, extra_env: dict[str, str] | None = None
+    ) -> int:
+        """Look up the builtin named argv[0] and call it.
+
+        Also handed to builtins as `ctx.run_command`, so `find -exec` and
+        `xargs` run commands exactly the way the shell itself does.
+        """
         builtin = self.builtins.get(argv[0])
         if builtin is None:
             available = " ".join(sorted(self.builtins))
@@ -126,17 +156,20 @@ class _Executor:
                 f"mcpath: {argv[0]}: command not found (available: {available})\n".encode()
             )
             return 127
-
-        def call(io2: Streams) -> int:
-            # `X=1 cmd` sets X only for that command.
-            ctx = CommandContext(argv, io2, s, env={**s.env, **values})
-            try:
-                return builtin(ctx)
-            except Exception as e:  # a bug in a builtin must not kill the session
-                ctx.error(f"internal error: {type(e).__name__}: {e}")
-                return 1
-
-        return self._with_redirects(cmd.redirects, io, s, call)
+        ctx = CommandContext(
+            argv,
+            io,
+            s,
+            env={**s.env, **(extra_env or {})},
+            run_command=lambda argv2, io2: self._run_argv(argv2, io2, s),
+        )
+        try:
+            return builtin(ctx)
+        except BuiltinExit as e:
+            return e.code
+        except Exception as e:  # a bug in a builtin must not kill the session
+            ctx.error(f"internal error: {type(e).__name__}: {e}")
+            return 1
 
     def _substitute(self, io: Streams, s: Session):
         """`$(...)`: run the body in a subshell and capture its stdout."""

@@ -204,11 +204,12 @@ class VFS:
         """
         for entry in self.listdir(path):
             yield entry
-            if entry.is_dir and not self._is_symlink(entry.path):
+            if entry.is_dir and not self.is_symlink(entry.path):
                 yield from self.walk(entry.path)
 
-    def _is_symlink(self, vpath: str) -> bool:
-        return self._local and os.path.islink(self._real(vpath))
+    def is_symlink(self, path: str) -> bool:
+        """Only local disk has symlinks; tools use this to avoid descending into them."""
+        return self._local and os.path.islink(self._real(self._check(path)))
 
     def _entry(self, vpath: str, info: dict) -> Entry:
         mtime = info.get("mtime")
@@ -246,6 +247,21 @@ class VFS:
             data = self.read_bytes(vpath) + data
         with self._translate(vpath):
             self.fs.pipe_file(self._real(vpath), data)
+
+    def touch(self, path: str) -> None:
+        """Create an empty file, or update the modification time of an existing one."""
+        vpath = self._check_writable(path)
+        if not self.exists(vpath):
+            self.write_bytes(vpath, b"")
+            return
+        if self.is_dir(vpath):
+            return  # directories: nothing useful to do on every backend
+        with self._translate(vpath):
+            try:
+                self.fs.touch(self._real(vpath), truncate=False)
+            except NotImplementedError:
+                # The memory backend can't; rewriting the content bumps the time.
+                self.fs.pipe_file(self._real(vpath), self.read_bytes(vpath))
 
     # ------------------------------------------------------------------ #
     # Mutations
