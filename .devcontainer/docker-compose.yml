@@ -11,6 +11,11 @@ services:
       - ${HOME}/.deepagents:/home/vscode/.deepagents:cached
     env_file:
       - .env
+    ports:
+      # MCP Inspector web UI (`just inspect`), reachable from the host's
+      # browser even without VS Code. Bound to the host's loopback only, so
+      # nothing else on the network can reach it.
+      - "127.0.0.1:6274:6274"
 
     command: sleep infinity
 

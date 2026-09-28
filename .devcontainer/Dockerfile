@@ -1,15 +1,18 @@
-# Stage 1: install Node.js 22 + OpenAI Codex globally, then bundle into a
-# tarball. We use tar because COPY --from dereferences single-file symlinks,
-# which breaks npm/npx/codex (they are symlinks into node_modules). tar
-# preserves them as symlinks; extraction in stage 2 restores the layout.
+# Stage 1: install Node.js 22 + OpenAI Codex + MCP Inspector globally, then
+# bundle into a tarball. We use tar because COPY --from dereferences
+# single-file symlinks, which breaks npm/npx/codex (they are symlinks into
+# node_modules). tar preserves them as symlinks; extraction in stage 2
+# restores the layout.
+# MCP Inspector v2 needs Node >= 22.19, which the node:22 tag provides.
 FROM node:22-bookworm-slim AS node-installer
-RUN npm install -g @openai/codex \
+RUN npm install -g @openai/codex @modelcontextprotocol/inspector@2 \
     && tar -czf /tmp/node-runtime.tar.gz \
         -C / \
         usr/local/bin/node \
         usr/local/bin/npm \
         usr/local/bin/npx \
         usr/local/bin/codex \
+        usr/local/bin/mcp-inspector \
         usr/local/lib/node_modules
 
 # Stage 2: final dev container image.
@@ -30,7 +33,8 @@ RUN rm -f /etc/apt/sources.list.d/yarn.list \
 COPY --from=node-installer /tmp/node-runtime.tar.gz /tmp/node-runtime.tar.gz
 RUN tar -xzf /tmp/node-runtime.tar.gz -C / \
     && rm /tmp/node-runtime.tar.gz \
-    && node --version && npm --version && codex --version
+    && node --version && npm --version && codex --version \
+    && test -x /usr/local/bin/mcp-inspector  # (it has no --version: that would start it)
 
 # Install uv system-wide so every user (and image layers) can use it.
 # UV_INSTALL_DIR overrides uv's default (~/.local/bin) for a shared location.

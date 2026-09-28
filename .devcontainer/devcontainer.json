@@ -12,7 +12,17 @@
     // uv hardlinks by default; that fails across the devcontainer overlay fs,
     // so fall back to copying. Silences a noisy warning on every `uv sync`.
     "UV_LINK_MODE": "copy",
-    "UV_PYTHON_INSTALL_DIR": "/usr/local/uv/python"
+    "UV_PYTHON_INSTALL_DIR": "/usr/local/uv/python",
+    // MCP Inspector: no browser inside the container (VS Code forwards the
+    // port instead), and no OS keychain, so keep its secrets in memory.
+    "MCP_AUTO_OPEN_ENABLED": "false",
+    "MCP_INSPECTOR_SECRET_STORE": "memory"
+  },
+  // MCP Inspector (`just inspect`): docker-compose.yml publishes 6274 to the
+  // host, so VS Code must not forward it again (it would pick another port).
+  "portsAttributes": {
+    "6274": { "label": "MCP Inspector", "onAutoForward": "ignore" },
+    "6275": { "label": "MCP Inspector (Apps sandbox)", "onAutoForward": "ignore" }
   },
   "postCreateCommand": "bash .devcontainer/post-create.sh",
   "customizations": {
