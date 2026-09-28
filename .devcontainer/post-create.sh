@@ -7,6 +7,11 @@ echo "==> Fixing cache volume ownership"
 sudo chown -R "$(id -u):$(id -g)" "$HOME/.cache/uv" 2>/dev/null || true
 sudo chown -R "$(id -u):$(id -g)" "$HOME/.cache/uv" /usr/local/uv 2>/dev/null || true
 
+echo "==> Trusting the workspace for git"
+# The workspace is bind-mounted from the host, so its owner uid may not match
+# `vscode`; git then refuses with "detected dubious ownership".
+git config --global --add safe.directory "$PWD"
+
 if [ -f pyproject.toml ]; then
     echo "==> Syncing project dependencies"
     uv sync
