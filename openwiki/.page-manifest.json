@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/runtime-architecture.md": {
+      "pageVersion": "sha256:93182c6c753dbf6c0eb98b77f65741e87ef603256ec26962478f4b4cc8b3d2c6",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "a93a1984-9786-4205-b20e-a58e96d16471",
+      "gitHead": "4e4a8903501fe788eb6a6ba39816157ba3400334",
+      "sourceFingerprint": "sha256:d9c35868ecfeeb3db7c3cfa9129b07c5d45189255d3100fd25222badad881677"
+    },
+    "/openwiki/concepts/builtin-command-system.md": {
+      "pageVersion": "sha256:d1591503c9b895863c9e4fe132c5e11fc4365270c3842bca3cd31d7f703656a9",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "a93a1984-9786-4205-b20e-a58e96d16471",
+      "gitHead": "4e4a8903501fe788eb6a6ba39816157ba3400334",
+      "sourceFingerprint": "sha256:d9c35868ecfeeb3db7c3cfa9129b07c5d45189255d3100fd25222badad881677"
+    },
+    "/openwiki/concepts/shell-engine.md": {
+      "pageVersion": "sha256:de636ad88d9d82389343046fd1f1c8d1cfa9a9136f8de21e8b4ac1d587629cf5",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "a93a1984-9786-4205-b20e-a58e96d16471",
+      "gitHead": "4e4a8903501fe788eb6a6ba39816157ba3400334",
+      "sourceFingerprint": "sha256:d9c35868ecfeeb3db7c3cfa9129b07c5d45189255d3100fd25222badad881677"
+    },
+    "/openwiki/concepts/virtual-filesystem-security.md": {
+      "pageVersion": "sha256:0e37cd31cdd16c36f1538c7460df31b57975acf2eff4cbac6c9d9b85f5e10b1f",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "a93a1984-9786-4205-b20e-a58e96d16471",
+      "gitHead": "4e4a8903501fe788eb6a6ba39816157ba3400334",
+      "sourceFingerprint": "sha256:d9c35868ecfeeb3db7c3cfa9129b07c5d45189255d3100fd25222badad881677"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:9751b90c801044f6eb6ce66d1c8f318608af4bc93db8147153c22a5d1d7c59f4",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "a93a1984-9786-4205-b20e-a58e96d16471",
+      "gitHead": "4e4a8903501fe788eb6a6ba39816157ba3400334",
+      "sourceFingerprint": "sha256:d9c35868ecfeeb3db7c3cfa9129b07c5d45189255d3100fd25222badad881677"
+    },
+    "/openwiki/workflows/changing-shell-behavior.md": {
+      "pageVersion": "sha256:f4f1c84d9f4b0f6c1b3fa85569997fb0035b374d83fbe19edd835d7833a08ba9",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "a93a1984-9786-4205-b20e-a58e96d16471",
+      "gitHead": "4e4a8903501fe788eb6a6ba39816157ba3400334",
+      "sourceFingerprint": "sha256:d9c35868ecfeeb3db7c3cfa9129b07c5d45189255d3100fd25222badad881677"
+    }
+  }
+}

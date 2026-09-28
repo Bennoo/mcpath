@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0e37cd31cdd16c36f1538c7460df31b57975acf2eff4cbac6c9d9b85f5e10b1f",
+  "claims": [
+    {
+      "id": "claim_d758c8ba3dad4e54983f0b0e260027f4",
+      "statement": "VFS is the storage security and compatibility boundary: shell builtins and redirects use virtual-path methods, while VFS maps those paths to an fsspec backend and normalizes backend behavior.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/_registry.py#L23-L52",
+          "version": "repo-lines-v1:sha256:ac70d6794db21358ebc34bf543b52ee6a95030d84a0e31450edcbbad0e399281:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMTk5Yzk1ODRhOTZmZDVmMTMxMTAyNGUyY2NiMDc4MjUwYmNhYmY4YTk4M2RiMmU2MDQxMjg3MmZlMDhiMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MWZlODY3ZmIzOGM4YTdkNzFmMzJmOTgyYzQ2ZjliZmJiYmVlYTgzYjRjMDNmNGQ2Yzg0N2E5ZjRhYzEwZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkMzUyNzFlNjUyOGQ5MDJmMjk4ZmYxNzcyNGQ2MGYwZTEwMDljNWJlZTE5NDMwMzBiNWNmMjhmOTQ1ODhlZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NWE3MzNiNDM5NGNlYjEwOGY0NjJjYjE1YzY4MDY3ZDE4Nzg2NGZjYjBmNTMxOTZhZDMwOTM0OTU4ZTUyNzIifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L184-L240",
+          "version": "repo-lines-v1:sha256:cafb9551f25631903a6e887851d7336d8e6050ea16af170114d454d430da90e5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2NzA5OTQ2OTA1YzU4OWQ0MTQyZjNiODAwMDQ0MzU4NTU1YzgzZWFiN2Q5MTVkMDAzNDhhOWYxODI0YTM2ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwZjdkMjU3YjE3NmMxZjg2OTMxNjg3ODZjY2E1MzNlMmFiYWJkM2MzY2NiMjgzYWE3MzI5OWI4OWQ2MDkxMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4YjU4MzgxNGViZThmNmNmNDk0MTA4ODQxZDNkNzZlMDcyOGU2MzczMzdiMmU0ZmZhYjJkYjBlYThjYzA2YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkYzc3Y2M1MDU4YzEzZjJkNWRjYjk2ZTI3ZDE2ZjU0YWNhNzg3MzNiYWYxM2NmMmNkMTMwZTA4NTBhMjE2ZjQifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L1-L20",
+          "version": "repo-lines-v1:sha256:13608bba91e4bb6eaf5abf2e17148439f813fb0dd3580eefbc00161b4925e72c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0N2VlY2ViNjI5MjJjYTVkZjc3YWE1ZDkxNDIzNmJmN2VkNzAyNmMyNDU3YzE4ZWQzODU4MDEzYmQyMTljZTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NzlkZDIyMjZmOTUyODZkZjNjYTE4OWJhN2E1YTQ3MjY0Y2RkZDI0NmY5NWRlYWJjMTViYWMxMDQ2N2I0OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwYWJiYjQ5M2YzZTk1MzcxMjUwYzhlYjAyMjRiMjc4YmYyNDhjN2M4ZjcyMDc3MjUxN2M5MGRlYTYxY2U1YjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_699b8300df784146ba9c89400ed28bc1",
+      "statement": "VFS resolves paths textually before backend mapping, producing one absolute virtual path and clamping excess `..` traversal at virtual root rather than allowing escape to a host path.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L98-L117",
+          "version": "repo-lines-v1:sha256:e1ed0b10811d28bdd23f7c15b4f4c3b8802ae0f7feb4f0f426d8e040941ab85c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWJjZDBjYzY5MTNkNGY1MWViMjFlNGY1YWZjMmU5MGY4NmQzNmE0NTBiYjQyY2IwNWM2ZjNlMGQ3MDZmOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlNmYwNzc0OTdmODhiYzczZDM5MjU1OTQyNGY3MTQyOWQyYzliNzNmZmUwMzU2NmE3MDI3M2JjODZhZTY5OTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NTY2MDczY2I0YWQwN2E0NDMxZTkyOGI5ZjQ2YTNlMzJmZDNhOWUxNzMwODVlYjNlNjNhYjNlY2Q5ZjhiM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlODMyZTA0YjRmMjEyMmY3YzRmOTMxYWU1ODQzNTI4NjQzN2U3Nzg3ODgzM2UwY2E4YjYxMGZlN2VhNWIzODkifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L51-L73",
+          "version": "repo-lines-v1:sha256:cf5d45a1866eebeb27f4dfc7cbf9777804d7e6d71a44930f633aa3dc311c2252:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2JiOTUyNjZkZDdjOGQ3YzkyYWJjNTVlZjJlMTU2N2MxYTU3NjhiODcwZWY1NjdlZWI2NWI5MzhkNjM3ZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZmJhNjE3YWU5YWQ1YWIyNzhjNDg2YzYyOGFjMzg1M2E1ZDVjNmVhNDk0NTdkNjhjZWFmMDI0Yzk3Yzc1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0Nzk0NGIwODVlZDAxODg4MjJhMThmNTdiNTgzM2YwODgyOTE2NmU3NWNkZWYyOTcxNjlhNmM0MGEyMWVmNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhNzZhNDliNmM5Yjc0MjdhODNjNzNhY2M2NTJkZjAwNzU4MWRhMjY1M2YwNjk1ZTMxYmRmOGM4YmM2M2NiYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_19607e9f73fa4e5bb1065119d1f17d85",
+      "statement": "Deny policy is enforced after normalization by case-sensitive glob matching against every path component; denied paths fail with EACCES for reads and writes and are omitted from directory listings.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L119-L130",
+          "version": "repo-lines-v1:sha256:d51112df50c85c53ae6d3b5519bca2f0d5e70596d0033c63c21bd61a9e48b34e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWNlNDA0NWFjNTE4NzFkYjU5YmQ3MTBjMGU2YTYzMTgxOGQ3YWQ2YWQ4MjA5NTM4NDdmN2U4NTAxM2RhZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NjUzYmQxZmU2OTZmMzRiZDc4MzIxNzI0NDcxMGNhNWQ0YTEyMTdhMWQ1NjYwMGJhYjYyNGFkMzM4YjA5MTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhODAzNDE2ZmUxZjg0MjJhYTE0MWQ2Y2NmMGEwODVkODEwMjcxMTAwNzhmMmIzNTdkMDIyZWNkYjkwMTAxNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MGY0MThlNDU4ZTlmZGRhOTQ0NDcyMWM5NTZkOTlmMzNkZmRjMWRjZjZkNzg2MzVkZDhkMWE1NzVhYjQ4YzgifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L182-L197",
+          "version": "repo-lines-v1:sha256:2681915a73ce7ca4f25bf66a0961987e7484a133e7585157ec43112fcc533103:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZWJkOWViNmQ1NDQwN2MzZmI2YmYxODc5ZDY1ODVhMzA0OTU4MzQ0MjAwNTZmNzYwNTRkOTYyYTMxMWFlMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMDg4MDRlNDlkYTMyYjdjMGEwNzBmMWU2Y2JmYjg0N2M5MzQxZGU3OWI5YTgxOTUzNzA1MDA4OGQ5ZTJlYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYWUxOWVhYmJlYjBjNTE0ZmVjYzU1MDEwMjA4ZjUyYjQ0YjEzMWYxYzRjMWM1YTJmZmM1ZTJiY2IwMDBmNTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjNzM3MzdhYWViMGM5ZmU3OTMyNWQ4MGY5NDE2ZWEyODFjMjYxODI4M2RmNTcxOTUyMWE4YzM0YzU1Yjc0MjAifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L104-L132",
+          "version": "repo-lines-v1:sha256:066ef7fcc0f4a241fbe10e59609c09cc54424a6e43cbffb12b083ef8e548e93e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMTMxYTU3YWU2ODdjZmY2Yjk4OTljYjAxNGQ1MDU4NTgzMzg4ZGFjYTZlYThiMGRmZmJlMGFiNTljNzViZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZjRlYWY0NGU0NmYxMmY1MGE4MzZmMWRiNTMyZTdkYjk2Mzk4NTYwMjY0NTNhNGU0MzQ2NTViMGY3MWYyMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjNmI5OTExZjNiZGYwZWQ3YTEyNWZiM2VhODk4Yzk1ZjM2NTA0ZmYzMWVlMWZiYzA5MTlhODZhZTUzMDQ1YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiNzQ4NGZkNDRlZWJiNzc4YWE1NzQyOGM1OGY0ZmNlMDZlZTU2M2JmODk4MTYyNjhiODA4OGRmNzc2ZGEwNDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ff28bb0b3804a79a967bce916ccdc0a",
+      "statement": "On local storage, VFS canonicalizes the jail root and each mapped path with realpath, refusing symlink targets outside the root while permitting symlinks whose targets remain inside it; escaping symlink entries are hidden from listings.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L119-L136",
+          "version": "repo-lines-v1:sha256:5893bbed4f42816decee1a6523cbdecff1403532a094278f40bbd8cf45325e80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWNlNDA0NWFjNTE4NzFkYjU5YmQ3MTBjMGU2YTYzMTgxOGQ3YWQ2YWQ4MjA5NTM4NDdmN2U4NTAxM2RhZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNmY1ODZjMTJmN2Y1ZTA0YWI2MDljZWE5YmZiMTRhY2NkYmY2YmI2Y2Y0ZmExMWI5MjRlZGRmZDZiMzRiOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhODAzNDE2ZmUxZjg0MjJhYTE0MWQ2Y2NmMGEwODVkODEwMjcxMTAwNzhmMmIzNTdkMDIyZWNkYjkwMTAxNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkNDA0MjhmZjU0ZWUyZDJmN2YwYmM5NzQwNjhjNDE4ZmQwNGM2OGYzMGM2NDIwYTJlMGRhYTU5YjNjYzViZDkifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L182-L197",
+          "version": "repo-lines-v1:sha256:2681915a73ce7ca4f25bf66a0961987e7484a133e7585157ec43112fcc533103:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZWJkOWViNmQ1NDQwN2MzZmI2YmYxODc5ZDY1ODVhMzA0OTU4MzQ0MjAwNTZmNzYwNTRkOTYyYTMxMWFlMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMDg4MDRlNDlkYTMyYjdjMGEwNzBmMWU2Y2JmYjg0N2M5MzQxZGU3OWI5YTgxOTUzNzA1MDA4OGQ5ZTJlYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYWUxOWVhYmJlYjBjNTE0ZmVjYzU1MDEwMjA4ZjUyYjQ0YjEzMWYxYzRjMWM1YTJmZmM1ZTJiY2IwMDBmNTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjNzM3MzdhYWViMGM5ZmU3OTMyNWQ4MGY5NDE2ZWEyODFjMjYxODI4M2RmNTcxOTUyMWE4YzM0YzU1Yjc0MjAifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L76-L86",
+          "version": "repo-lines-v1:sha256:48b238961fe1565e7bff459d79e8449b89cc4e901c640cd9044bd7deda578da0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhOTAzNjFmM2M3ZmJlZDkzZTBjMzBlYjcwY2Y2ODRhN2Y5Y2ViZjAwNmZjOTY3ZjIxYjhhNWUyZjkyMTgwYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyN2JhMThkODU2Njk0Y2M5NjI3MGFhMzI4ZmYzNDM5ZjI5YTdiYzY2YmMxNmViYTk5ZDVjODFkNmRmNWRiZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczMjQ2MjUzYzIwZDBiMDRlNjA3ZTdkNTU2ODk5MDIzMjQxMDVjNDVlMzc5NDA4MzA3OTU1Mzc5NDYxYmUwZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkNjAyYzA1NTBjZjk4N2VmMjY1OTEwM2QwNmExMTgxMTc3MjhjM2U2YmQ3MjgwMjcxNGQ0ZWQ5MmE3OWIwNTkifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L237-L267",
+          "version": "repo-lines-v1:sha256:ecea59eaf8c409cb301ca016aca1124eba175c080542bc65c228976691520aa4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTVjNjgwMTFiMWZlMTIxZjUzMThjNTI0OGEwNTRlOTU0MWZmMGI5NzFlYTYwNzM5M2U3MWU5ZjBlMzkzNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlZWUzZmExYWY0NGIxYjkxMjA2OGQ5ODM2MjY5MjhkZWRkZjU2YzgyNjA0MThlZDNmNDAxMTQ3ZmI1ODg2YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1ZmRmMWJlY2Q4MWQ0MDA2ZmY1ZGYxNzJlMTAxMTFlZWE5NTkwZGZmNTE3NjAzOWQxYWY5YzczYmE3ZThiZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_25577bf5df504ebbb7dd23dfa6be113c",
+      "statement": "VFS.walk performs sorted depth-first traversal over filtered listings and yields local symlinked directories without descending into them, preventing symlink-loop traversal; symlink detection is local-backend-only.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L199-L212",
+          "version": "repo-lines-v1:sha256:acabc5bd22603ceb6ff66add0f62e456418e237e9660c6b04a62a9bd43f76363:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4OWE4NTJiMTdhMWUyY2U4NGUyNmZlZTUwNjA3MTRkNGUxOTllYmZkOWVhNjIxMWViYmY3YjZiMGQ0YjhmOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1NmQzYzZjZWJlOWQ1NDIzNDViYWM0MWU2ODg1MWQxMzJjNzljNGJjMTY1MTFiMDZiMDExMmM4Mjk1ZDAxNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwMWY5YTc4ZjM1NzgxM2Q4OTBlNmVhNjg1ZmM2ZDk3ZjdkZTM0Y2RkZjJjY2Y5YWY0ZTE2NTE3MGJlYzY4NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyODQ4ODYxYWE0YWMzOTVjYTI1OTljNmMxYmI1NWVkODA5NmZhOWVlMjFhMjRlN2ZkNmU3MzI3NWE3NWNhODYifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L269-L275",
+          "version": "repo-lines-v1:sha256:483748a8f4b212f4ca6f3a2e6134fe05975fce2d5741bbcca46e915720005bba:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGJiZjQ4Y2RiMmM5Mzg3ZGY3YWEzMmQ2M2ZkOGYxNzNhYzhjZTcxNjE4NWZlOWFlZWMzMmJhNTZiY2M5ZjJiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRkMjQ0NTgyYjZmYjAzZDIzYjg0MTVhYmVjZDM0NmIwYzlmNDY2YjZmNzUyYjA2ODE4OWNlN2U5YTJkYzM1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzliOTNjMWVmMTNmNjYwYjczYTk1MDc0YTFmNjFmYzVlNTRjYjU2OGI3MTlkMDAzNjY5ZTkwZjQ4NDQ2N2E1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNlYWFlOGU2OTY0YzhiZmUyMDBhOGFhYjIzNTRhZGVhM2E2Y2ExM2NkOGZkMzhlNTJlMWY5NmY1YWUzZDIzYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4d5a22392374a17a38b7405c67c2279",
+      "statement": "VFS exposes backend-neutral Entry metadata and normalizes the memory backend's `created` timestamp when `mtime` is unavailable; its boolean convenience predicates collapse any OSError to false.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L157-L180",
+          "version": "repo-lines-v1:sha256:15ff90fedc4ef2e42b11fc58420033dd0b9ac7c6802d6d15d61d7bc753a59992:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YzBlZWI3ZTFhZjZiYzlhMDg5YzJhZThkMDUxYTNkMjZkNzNiOTRmNDYyYjk2ODQ2MGVkMDkxYzg2NWFkZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmMTFlYTExZWYwMWUyZTk2OWU1ZjRjNjI3MmYzZGI2NmRlNWY4ZTU0ZDFjYWFhNGFmZWYyZDIwYmJhMmVmMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4YmQ5MmVmMzUyOTMzODAxZjMyMzU2MjQ2OWI3M2UyYTkxZDEyM2Y5ZDM3YzFhOWFjMDMyNDZlNjk0YWJlZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyZDc5NzgzMTU3ZjI3OTNlYjZhZDRiYWU4NDBlYjNjMWUwNDNiNWE4MzQwOWNiNDg3ZTI2NDFkNjg1NTczZDgifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L214-L224",
+          "version": "repo-lines-v1:sha256:bfa545013396f14b7a13d99719ef8f9b0a7ce35a1fc55b0ed48c436686c8ed57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjZjFlYTQ0N2U4ZDA4Nzc5MmQ5YWQzN2M2ZDM3MDRhOWM1ZjliOGExMjhjZWExYzdiNmUzN2FiNDgzY2RhNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMmM1YTYyOWExNTc0ZGZiOGNlYWM1OTJhN2Y3YWE0YzAyYjFjNjYzZjJlMTA5MzZiMTAyNjdmMWI4Y2JiMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5MWVlMTI4Nzg0MDhkYTNjZjllM2JjZjkxZDY4YTM0NzBhYjM5Y2FmYWY1MmIwZTg2N2M3ZTQ0ZTBhNWRlYmEifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L52-L63",
+          "version": "repo-lines-v1:sha256:e74954e6fe0055e38c3e999147f2a566dd6b65bf4d870ec624ae9f41fa34e527:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlM2ZiMWU1OGZiYzkwNDc5NGQ1MDczMTRmYTkxYzlmMmYxOThjODhkM2ZmMzk1ZTAwODI4OTAxYzM3ZGM5MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4NjFhNWZhZmIxNjJmMjYyZWIyMDZiN2Y5NDFlNzhiY2FiNDBmZmY1Y2FmYjRlZWYxMzI0YWE0MGNiOGI3MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExYjNiMWMwYTc1MzViMjU5Y2M3ZGY2YWU0MzRhODNlOTJkZDc1MmZjY2IwMGE0OWZjZDlkYzJiYTNmZDA3MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3OWVkYjU1ZjZjNzFlYjY0Y2Q3NTkwNWNkOWZlYzRhMWE4ZTMwZTM4YThmNDVmYjQxZDFiNjdhODIxNjZmYWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_409033b6ef004a0790b6bff88b226bc9",
+      "statement": "read_bytes explicitly rejects directories with EISDIR and files whose reported size exceeds max_read with EFBIG before calling fsspec cat_file; the default per-file read cap is 10 MiB and is separate from MCP output truncation.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L31-L31",
+          "version": "repo-lines-v1:sha256:0cae75b753ec78e51d39b61833fff4fd5771a392a46ff4c11dcd0e4571eafa39:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNhZTc1Yjc1M2VjNzhlNTFkMzliNjE4MzNmZmY0ZmQ1NzcxYTM5MmE0NmZmNGMxMWRjZDBlNDU3MWVhZmEzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNhZTc1Yjc1M2VjNzhlNTFkMzliNjE4MzNmZmY0ZmQ1NzcxYTM5MmE0NmZmNGMxMWRjZDBlNDU3MWVhZmEzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDUyYTk2MjE5NDcyNWQ1YTAzYmNkYTZhZTFkY2YxMmVmMmFmZDE1OTA3YTNlYjVhZjNmNTU4OTc2MTQ1NGU0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQ0MmFkNjA4ZjIwYWRhNmQwMTgyYWM2NTM3MzZkZjBiYWU4MjkwZDhjN2E1YThkNWJmYTNjZjViMjIyNzMxZiJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/server.py#L64-L79",
+          "version": "repo-lines-v1:sha256:243843f9691b421b949eff65c7e6b731adc38dce0aee61ab67acf3a5c30ecd06:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNDkxODg4MzI5ZTdkMGRjODkyMTNhNzNlN2ZlYzVkYjg0OWNhNTZiNmVmMTViNjg2ZTk5Nzc2M2E3ZWY0NGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYjhmNGY0MTM1OWY2YzBiZjdhYmMwNDdkNGM1Nzc0NTcyMjMzNGY1ZDJkNmU3MmUxNjZhNTViM2EwOTc0NzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0N2NhYTJkMjcyMzEwODcxNmViMzFhNzY0ZDdlODU0YjNiMzNjYTYwYTYzZTljOTBlYWZkZjc3MTY5NzMzNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjYjE1ZTg3NTA5YzAyOGU5ZGE2ZjNmZTFiMzdlNjNlZDhhOTNhYTA1NmMyYzk3YWM2NTZmMDE5ZDc4OTdiYTkifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L230-L238",
+          "version": "repo-lines-v1:sha256:af15b3c5ce71e8029c5850fd2c51dc0d52c6a138338df16da6ec57e52bf14641:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJiYWVhZGM0NmQ4N2NjNThkZjgzYWY0YjQzYWEwNjNjZmE0NDA4MTkwZTI5YjEyODllMDcxZTliZGVlZjJiMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODJmN2UwNGUyMjRiNzVkOTIyMzMzOTY0NTU0YTNkZjM4ZTA0NzdjMmZjOGJiNWMwMTlhYTM3MDgwZWY2MDlmNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDMyZWE3ODRlYTBmZWFjY2RiZjY3NDcyN2Q1YjcxYmJlMmY4YWQ4YTAwYTFmYWIzNDY2MjkwNTZjZmYzODk2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTZmMTc2ZTQ1MGZhMTA3MWI3OWVhYzA0MWJmYjY5MzdiOWQ0NGViMmFhMjkwMDVlZDFkZjM4ZmI1OTNkNmU5ZCJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L35-L36",
+          "version": "repo-lines-v1:sha256:07f6584ac48bb3c210be1c7531a74f81d017b49967b5de61df4aff7e8136966e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQwMzlhMDRiNmEwZTk0NGFlMTNjMzhhZjIxZmRlOWI1MGNkZTNjYjY5NmIyN2U5MzRiYmFiMTU2NmU3ZjNhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhiN2Q3ZjZiYzYxMTA3Y2QyOTNjZTVhYjI1ZWQ5ODlkNWFhZGRjODhhNjc4MWM0MTZhYjMwNmU0ZDdhMzFhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGE4OWRmYzkxMjJmOThiOGVhZDkzMjRmZjE2MTQwM2FkNmFhMGZmMDkxYWE3MjA0NDFkOGNjNzYwNDgwMzNiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQ5OTEwZDA4YTI4MjFhMzhkMDc0MWU5MTg1NTNmYTAyYjI1ZDZhNWI3MzI5OGY2MjZlNWYzNmYzOTAwMmVmNSJ9"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L87-L95",
+          "version": "repo-lines-v1:sha256:5c445c19add64e06be3ee9d1cfd537086d031133164141de6e5d9f218abe621e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNiYzczN2ZmZGJkNjU1NmVlMTA3MGZlMmU4YjQwMDMwNDNiODQ2OGE1NmEyYjZhM2U2ZWExZjY3MzNiYzcxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTk2MjJkYWQ0NGZmNTk4Njg0MjU2ZTdlN2FlMWY4OWJmNGVmYzZiZjEzYWZlZGE0NDAwMTlmZDI2OTkzMDA2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTgwZDIxNDhkNWI4ODk5MjI0MmMyMWZkYTg2NDU5NTllMWQ1OGY3ZGY0NGNmYzg3OTAyNWRlYjY5ZTkyOGEyMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_df8cb1d30ce943a4b535e4ae1ff4f559",
+      "statement": "Every VFS mutation entry point enforces read-only mode with EROFS after normal path and deny checks; in read-only server mode the edit tool is also omitted, while reads remain available.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L82-L107",
+          "version": "repo-lines-v1:sha256:fc0f2d340c8f026d5523fc6eb21bf89a33565d6f96aca89f2e6fd773dda4d05c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3YTk3MDVhNjBjMjc4OWRiZTMyYWM1YmNhY2Y5MTU2ZTg0MWY2NjZjMjExMzU3NTUxYWJkOTFjYWI5MDllZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4ZDc5YTRlZTE1YTFlMzZjNjY3YmM1YjQxMTIxZDY0NmRhNDJlYTliZTkyYzk4ZTE3MzZlNjY2ZjAyMWQzNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyYjUyN2NkZTI1NTQ1ZWU5YTc3ODEwMDYzOWQ4ZWY2ZjI2NWNhZWQxYWYyYTMzNGUyY2IyMTIyMzI0M2VkNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmZTJlNGIyMWY2YTdmODEzNmJlM2RmODRkZjk1ZTliNzFlYTZlMTVmZTMzNzhhNDljOWM0YTE1MjE2OTdiM2QifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L240-L321",
+          "version": "repo-lines-v1:sha256:a5653ae4045db6538b1a9dc23299cde92cb78204d5067f179b6b28105b23c4f0:eyJzZWxlY3RlZExpbmVDb3VudCI6ODIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNmFmNDNlZTY1YzIzMzllMzM4YzJmOTYxNGFmNmVkY2QyOTBiYmY2ZjM0MjY4ZjUwODg3MTFmZGM2MmQ2NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyMGY3N2YxYzNiOWUzOGQxNDY5MDVkMjhlMjBmNmM1ZTIwYWNjYTkxZWJhM2Q1NWRiMDZhOGNhYjVjMGMxN2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkNzM2MmRkMzhjYTdiMTU2ODJhMGY5Y2I1MzBkNDgxYjNhYzI0ODFlMzdlMTIwY2JmZDJkZDkwNzI5NGMwNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0YTU4MTJhOGRkM2NkM2Q0OTVlMGI0OWFiNmIyMGZmMTAzYjRhNmMzODc3ZjIxMTExYzg3Y2Y4MzgyZTk3ZDAifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L323-L327",
+          "version": "repo-lines-v1:sha256:c310f3d65a5cc9a8f20ac855ac8368140f5cae27522488a350578926fbb6c9fc:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg0MGIyZDAyM2U4N2JiOWY0Mjg1ODAyNmYxZmRmMjEyMmJjMjRjNWRhOWFiY2UxNDBlMzk4MzQzZThjNDljNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZDk1YTVlNDNjOGVkMjZjYTZkMjA0Mjg4ZDM3ZGU1NTllNmEwNzdmOWI0ZTg5NWY4ZTQ2NTAxZDg2YTE0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTE3MDYxYTZiMGU3ZjNhODVlMmU3NzJhNzdjMjFkNDc0YzYzYjVmZGFkMzI5NmYyZTAxNTJkZjVmZjQ5MGM2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWIyNGY5OTFhMDJhNDI2YTNiMjQ4NGY0ZjkwZjk4NzM2MTA0YTM2NmU3MGNiOWYzY2IxNDY0YWMzM2U2MDE4MSJ9"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L205-L218",
+          "version": "repo-lines-v1:sha256:ede6fd3a365d926036e0bfe3975b242de2e5d16ceecd890772644d2bbd4cb38e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmMzQ1ODNhNTk4NzY3YmY1NmFlZmViNjVlMjAzM2ExNjUxY2M0YzhkN2U2ZjBhZjNlNWNmZDMyOTNmOTMzYjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3ZGI4MTcwY2RhMGM1ZjY3MzA3Y2M2MDFkMmI0MzI4YzdlMDIwMGZmZDc1NWM0ODFjYzY5Zjk4YzFmYmY5NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiYmIyNjk3YTM2ODMwZGQ5ZTM1ZmRlMWE3NTJkMGJiNjg2ZjRkMGI2NzkyZDI1NWYwNTc0ZmZkZWZhZmEzZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMzRkMjY0OTBhZjI4NGNlZWM3YWRmODRkOTFjMWQ3MGU0NmJmOGNhYzcxOTkxMTU3MTk3N2IwMWQyZDIwZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c715b0551ad04e8eac844edb96b67d6e",
+      "statement": "VFS validates destination parents to normalize permissive backend behavior: a missing parent is ENOENT and a non-directory parent is ENOTDIR, preventing memory storage from silently creating missing directories during file writes.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L240-L249",
+          "version": "repo-lines-v1:sha256:d576e4554b1959b243ecba6eee0cb0c4128347454338e456a8a2774a0bc610e7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNmFmNDNlZTY1YzIzMzllMzM4YzJmOTYxNGFmNmVkY2QyOTBiYmY2ZjM0MjY4ZjUwODg3MTFmZGM2MmQ2NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YmViNWU0ZTg2NmM0YmU4OTcxYWUwYjJkN2Q4YzMxODZlYTQ3OGUwMTZiYWI1NTE5MTM3NDYxODVjM2JiODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkNzM2MmRkMzhjYTdiMTU2ODJhMGY5Y2I1MzBkNDgxYjNhYzI0ODFlMzdlMTIwY2JmZDJkZDkwNzI5NGMwNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0ZjYyY2IyNjEzMDllNjIxODVjNGFhZWJjNTc5ODY3NmM3NzYxYTc0MzRlZDYzMzMyMjQzNjczMjRmNDlhMWUifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L329-L336",
+          "version": "repo-lines-v1:sha256:5161c3d5fbf4a8d5759e7a6442b6fa3e6cf485cd304b2b4a67a8cf25c2b04539:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2IyZWRiNDY1NjYzZGQ0ZjhlMzEzNGU1NDhjODVmOTU1YTZjZWNjNDgzNzYzYzk0MmJlMzEwYTgwYTkzMmE0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTczNDZiZTNhOGZmMmUyMDMwYTNlN2YwODBiZTdlY2ZhYjI1NTgxY2RkYjU1YTQzYWE1NjhhZjAwODRlNWE0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzViMDg4NjVkNTZiYTNkMWFiM2RmNjYyMTk4ZTQ2YzkwYjI5MTRmZGMwY2NkYWYyOThiMGY0YjRhYmVmN2ExNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L149-L160",
+          "version": "repo-lines-v1:sha256:3048a8d568ff18e7a9bf948ae23f2c1a3d7c261c04fb3273a914e6c138068466:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjYjRkZjk2MGE0YjhkNGIwNzgyODMxMzZiMmEwOWNjMDViMWY0MmI1OWNiMzkwNTgwMjZkNzMwOWIyZGRjYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZjNkZThhYWFjNjRkMTQ0NTBhN2Y5MzFmODMyODE4MGQ5Y2Y5MGQyMzU5YmEzNDM5OWFkODQ3YzRiMDNjYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyY2EwOGE1MTAwYWEyYWY5OTA1Mjc5ZGRhNzBiODQ5YTM1ODY5YjZiM2YzMTBjZTZiNWQ0MDI0ZDJhN2Y3ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0ZDQzNDgxN2ZmOGYwYjY4NDhhMzJhYjJjNDIyNGVhMjkyOGY5YmRhZWMxYzE4YmRkNTg0ZjE2MzljNDQxYjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8728ea2729da49289779db7f81c5d872",
+      "statement": "Portable append is implemented as a whole-file read-modify-write, and touch falls back from an unsupported backend touch operation to rewriting unchanged content; consequently append is non-atomic and existing-file append is subject to max_read.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L240-L264",
+          "version": "repo-lines-v1:sha256:58589aa72b92303390d5d4c830afc70f48d3afdf1ae058638759d7bc465c749b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNmFmNDNlZTY1YzIzMzllMzM4YzJmOTYxNGFmNmVkY2QyOTBiYmY2ZjM0MjY4ZjUwODg3MTFmZGM2MmQ2NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNjIxMjAwNzY4MTM2YWMzZjQ3OTNlZTcyMDc2M2QxNWNhYzUxODM4ZWExNGNmN2ZmYjJiYTJkMWViNjUxMjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkNzM2MmRkMzhjYTdiMTU2ODJhMGY5Y2I1MzBkNDgxYjNhYzI0ODFlMzdlMTIwY2JmZDJkZDkwNzI5NGMwNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmNGRiNjk1MjYxYmFiZjIzYmNlOGQ4NzBjYTgyM2Q3OTVmMTFlODY4NTVmYWU5ZDA3OWE0ZDJmZDNlOTYwYjMifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L138-L146",
+          "version": "repo-lines-v1:sha256:10256fb334e03b08146fae98cce689fae8debeb1df8a03b07a52f45dab525aca:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmIyNWVhZDQwZDliNjhiYmY1ZWYxN2RhNTZmYWU5YTU1ZmMxYzI0OTRmYTc4M2I1NGIyMmJjNTkwYmJmY2IyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2I4N2YzYjRmNWE2NzkzYjM4YjJhN2MxZTU0NjM4YzA5MmNmYTdlNmIyZWEzZGM2ZGYyYjdhNTRlNzc3YjBmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmQ1MmU5ZWY4MmFjN2ViZWQ5ZjE2NGUxNGIwODk2ZDQ5ZDA0NzljNzUzNDEzYzY1ZjY2M2Q4ODY4OGE4ZTgxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGRhOWRlNmRiZDRhOWJkYzc0MzhhODNkNzU2NzZiYzljYjhhNjgzZWQ1ZjA4YmQ2ZTY3MzdhNWM0OTJkYzIyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3ebffbf2ce545248b690d230cc4269f",
+      "statement": "VFS refuses deletion and movement of virtual root with EBUSY, rejects non-recursive removal of non-empty directories with ENOTEMPTY, and rejects moving a path into its own subtree with EINVAL.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L281-L309",
+          "version": "repo-lines-v1:sha256:141c199a1c9c0053d60abba45630d6bb4afb1a725bf522880be808f0376fe49e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzN2NmZDc2NGU1ODMzZGU5ZThjMzlhMmNmN2Y4NzQ3NjcwOTM1YmJjYTllMTE3MjM4YWIzZjBlYTk4MWNhZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkNjcxZjU5M2IyYzg4M2Y0MDliYzMwNGVmYWRkNGYxMjBhMGQ2ZjhjNGZlNWFiZDY0OGJmOTA1MTBlZTNmMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyOTNiODYxZjY1YThjYWRlODFjNzI0NzIzMTM3NWFjZmE1YTgzZGMxZDU5NDMzZmJiODFhNmI5OThiNTcwY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0NmIzODUzMmMzMGE2NjFkYmI4Yjg4YTc2ODBjMGVkNTQ4OTZkMDY5YTk0NGU4YjJjNTFjZGFmM2ZlZjRjYjEifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L173-L188",
+          "version": "repo-lines-v1:sha256:24f758ca78671a083ebc05fa67982de509cf58653f9bc054a03e056b4bfb8545:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3OTNiYjhjMThhZjc5YmNmY2JhZTBlZTY1MGE1YTBhMjU3NmIxMWE1ZTM5Mzk2Y2I1YmQxYzVhOTUzMWViOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3MWEwMjE5NjYwZmYyYTY0N2JmM2YxYWRhZDM1NjY0YTg2OTg1YWEwYTU5Zjc5NTNmOTk0YmYwMTQ1YjZiMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0YjE3OWJhMjIwZWJlNjAwZWI5ODhlYmMyZjAzZDBkYzIwYjJjYzdkZGFiYTVmMmFlMDM3NDZlMWI5ODY0MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5OWY4YWIzNzFiODZkNGM2OWUyYmI0NzU4ZjRhNjQwMDE3NDJlM2YwMGM3MjkyMTczMWFmMGQ5MzQxODlmOTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c3d3ebf480247a9a225887e473e67c8",
+      "statement": "VFS move and copy operate on exact destinations: move replaces an existing file with a file but rejects existing destinations when either side is a directory, while copy is file-only and recursive copy is composed in the shell from walk, mkdir, and copy.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/files.py#L438-L453",
+          "version": "repo-lines-v1:sha256:5b590de9494d073136b4506c84e4261fe98fa90ded84f87d12a477dd93a857fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlN2Y0MjZjN2NjMzliYjU5NmRhYmEyYmExNTEzMTBlMGRjZGM2OGI1NzgzY2U0ZjkwNjM2YzAxZDhkNTdkMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYWY5NWYxOGFmY2NlZDRiOGQyMjliZmFjODljZGNiYTYyNzgzNDdhMGNhMGUxYTNiYTAwOWQ3MDQ3MDZlYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5MzE2MmM4MjA1NTU4ODVmYWJlZWJhNjFiZTUyZTcyNjUzYjNkYmIyM2UyMjZmNjc3ZTE1YTQyODUwN2QwNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L292-L321",
+          "version": "repo-lines-v1:sha256:e4a7c61c9122cc97f4fd9ef391e0f33ccaa7637cff5af2de3c9248b4be87bf76:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliZGQwNzUwZTQyYzc4NjU2Mzk4ZjcyNDVjOWU4MzEzNWM2MzFlZjMwYTQ3ZTM0ZWY3OGFkMWQwNmUzNTNkNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyMGY3N2YxYzNiOWUzOGQxNDY5MDVkMjhlMjBmNmM1ZTIwYWNjYTkxZWJhM2Q1NWRiMDZhOGNhYjVjMGMxN2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhMTZjOTlkZGY2NzEwOGQyMzlkZmM5OGEwZTlkMzc1NWE3MmNkMDUyODBlODhmNjAxOTcyMDQ5YzYwZjllYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0YTU4MTJhOGRkM2NkM2Q0OTVlMGI0OWFiNmIyMGZmMTAzYjRhNmMzODc3ZjIxMTExYzg3Y2Y4MzgyZTk3ZDAifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L191-L203",
+          "version": "repo-lines-v1:sha256:bce46c9b409bd43c131e84870bfffe179ddfea173f29cab70db666a75794abb8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyZTdmNDI5ZWJiZDIxZDg3NmRhMzVlNGFiMTQ4ZDc0YTVhZTcwYjMxZmM1YjU0NGFhMjViMDFhOWYxYmU1NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyN2NlNThjMTY4OTZiYzg5NmFlMDMzMWJiNmFlZmE0NWIxZTY2OGYxZTM1NzZjOWIzNzQ2NmUwNTM2ZmY4NjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiZDU2NjI3NGNjMDc1NmY0NjQ2Mzg1YjhjNDBiYTg5NTJhM2JhM2I3NzA4YzRiZDRmOTgyZmE0NjQxYjI5MGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f2e01552b9b4383bca7c5ee88ee1818",
+      "statement": "Backend OSError and ValueError failures are translated to errno-based OSError values whose filename is only the virtual path; missing backend errno is inferred from known exception classes or falls back to EIO, preventing real backend paths from leaking.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L138-L151",
+          "version": "repo-lines-v1:sha256:25222c45395fc244a31109e1f396b1802a0f966b9bc2fc80e740b3695090745c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlNmZiMWUzYzRiYWEyZmI2NTllZmE4NDU2NDIzYzczOTY4ZDY1YWVjZmNmODQwZDA0Y2M1Mjk4Zjk5YmRiNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiYjU2ZDlkZjQ1M2FkZmIwNDQzYzYzODM4NDA3YmUyNGY5ZmY0MDlhMDc3YWUwOWFjYjE0NWM5MzVkZDI4MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiNzNlY2RkYzEzZGQ0NzU1ZmQ1MTY2ODBmMmQ2MzU0OGU2Y2FiZjBmN2YyMTE2MjBkOWIyMjhmYmU3YjlhYjMifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L38-L49",
+          "version": "repo-lines-v1:sha256:a86b2c993bbf7ead7f74b20d6c428cb764de4e4c881852b076bfcaa3596d9ecf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxZDk0NjE4NjUxNjE4ZjU2Y2MwMjRiMzAxY2MyODViNzVlNDAxMDNmMmU4YzZkZGU2ZjY3ZDc4NWNhOWUwNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjYzM1NjM2NTE1Y2YzYjI5NjYxNDhmODlkMjBlOTIyNWYzM2MwNTU5MzE2Yzg5MTRiNmI2YzY5Mzc4ZGVkZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzOWMzOGE0MDhlY2E3MWJhNjk0ZmYxMjU4MzQ1MzgwY2YyYjkyZmJiMTc1ZDhmYjg2NDgwZTUzMzA1YTRkYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhOGI5Y2MwZmJmZGU2Y2ZlMGRiNjFlMTBjOGFmYTkzNzg4NDkxZTY5ZWViZGRhMjJkNWZjOWUzODkxODNlMzYifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L221-L234",
+          "version": "repo-lines-v1:sha256:f0019b877f3c6774befa1f7cc6e2a474c5cb82e9945d158861a0196642e1824c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYzAwYzY3MTRiOTM1MDBmOGExN2NmY2QzOTcyYjVmMzY4ODRmMzY4MTgyMmZiNjNhOWM4M2Q2NGRhYzAzNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMGVmMTU1ODMzNWFmYjc4NzY5NmI5YmJhMjc2ODg1YTI2YWJmYWQ3NzcyNzZhOGQ5MjljMDk3ZmJiZGQ3YzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzYTAwNDhmOTA5NjZlZmQyM2U5MTM1MGY5MmRiZDc0YjExOWY0Y2U4ODc3OTU2NmY0MDI4NDYwOTI4YTM3NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5MzQzMDc0OWVjYzEzZjMxMjAwYTUzNjBlZjE4ZGEzODZmNTEzN2M3YWZhY2MzNzA3N2ZiYzI1MTk0YzNiYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_136272601c9447b481e22d4f3254fa55",
+      "statement": "Shell output redirection applies its filesystem effect during setup: `>` creates or truncates immediately, `>>` preserves or creates through append mode, and buffered command output is appended when FileOutput closes.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/context.py#L65-L81",
+          "version": "repo-lines-v1:sha256:e475f82e7fdc226cc85ea899c9a1f2cfd4052bca00b8fc918d8915bc39cc7d93:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYzIxYzc1YTI4MDdhMjVjZTBmZWI0ZThhY2FiNmFkMTU0N2ZiZThkZTU3NDhjNTI0M2U0MWM5MDUyNzEwMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3ZGNiMDVjOWU0NmNiOGU5YzIxYjBhMGRmNzBlM2Y2NGJiYzVjOWFmOWU4ZWI1OTJlZWE1MTdhNDBmN2Q3Y2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwNzFjZTljN2VjNGYwZGEwOTNmOTNmZDc1OWRiYjZjY2JjNjljM2RkODAyY2ViOGRmMDM5YmVhNjRhNTQyMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L184-L232",
+          "version": "repo-lines-v1:sha256:65473d1e8fd793d448e7167d144bd49bfaa6ab983ed47465a21bfa8d8ac7a448:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2NzA5OTQ2OTA1YzU4OWQ0MTQyZjNiODAwMDQ0MzU4NTU1YzgzZWFiN2Q5MTVkMDAzNDhhOWYxODI0YTM2ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxODlkODU5MjBkY2NiYmZjMDBmNTI0Y2EwZjA2YjljNTIwMzJkYThkNGI5OWIxOWY2ZjRjMDYwNTQzNjAzYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4YjU4MzgxNGViZThmNmNmNDk0MTA4ODQxZDNkNzZlMDcyOGU2MzczMzdiMmU0ZmZhYjJkYjBlYThjYzA2YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwYjRkOTcyNWU3NTllN2UxZWI4MTU4MjBhMThmOWNkNmIxNmQ2M2UxNDUxNTRjNjQ0MWYxMmM5Zjc4OGZmNjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3bb58bf759c4fcaa884b04a554dca7d",
+      "statement": "VFS construction resolves a local root canonically, verifies that the mounted root is a directory, and VFS.from_url supports both local paths and fsspec URLs such as memory storage.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L66-L92",
+          "version": "repo-lines-v1:sha256:df195c9baa5a8f89cab4ea3823f596c7edb89d6bed05da19ee9dd4c3d967735e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmNjQzMTI1YWZjOGQyNDhhMTFjZDcyODcwNThmYTgxZDQwN2I2MWM1NDNiN2IwYzJhNDQ5YzhjZWY5MTU1YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MjMzYjU0YzZlNDdmODhkNjhhYjIwZmY3YTAzOWI4ZTVlMTgxODMzMjU5MjdmNDdmMmQyZWIxYzNjNzMwNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmODNkNjMwYjRlOTQ2ODdhZWNjYTdhZmQ1YTM2NDVkOTkxOGRkYTJhYjlmMmJlZTAyZTFhYzAyNDg4Y2VhZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1ZGEzMWMyNDk5MTQyYWFkZDYyYTU2OGY5NDRmY2FjZTVjZDczMTBjMzA1NzUxN2NmMjhlOGMzYTk4MmJjZDgifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L278-L292",
+          "version": "repo-lines-v1:sha256:5dc2708973e26d1ea1b9ac3df8cbb364a20835d0278dec5db8d28104e7c1852f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwNWRhY2NiZGY3YmI3NGE3Yjc4ZmJjNjY2NGYxOTgxZmNlMGIwNWI1OTIyODI3Y2QxNzFlYWZiYjQwNjc3MTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YTQzODQ4ZWUzNDZjZjhiMjc1OGRiNzgwMDBjMjhlZDYxYzNjMDZlODQ3NTJkMmFlMmRiODFhYjY2ZmUyMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhODJlYmU5ZWQ0MDdjM2E2YmE0YjAwMzQyOTJiYWE1MmMxMWNlNWFlMjg2MTA3NDAyZGU0NzkyZWVlY2FjZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8de4b02ce0ad4e75aec38b594c30c74a",
+      "statement": "The VFS contract is tested across both isolated memory and temporary local backends, while symlink confinement and traversal tests are intentionally local-only.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_vfs.py#L1-L42",
+          "version": "repo-lines-v1:sha256:ecca637219d6401a729f1b7a6884337444e7c5f497c51520172aa3cc7de10747:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZWY2ZTRjNjA0MDM2YWI3ZjVjMjQ0MzI1YTBhMWMzNDNjNTgzMzQ1MmE1MzlhMmIyZmQzYWNkZWNjNjgwYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMzdiNWU1Y2UyMDE5M2YxMzVmYWNjZjJlMWVkM2RlNzYwZWU5OTVkOTU0NWE0YTZiZDY5ZDU5OTU3ZTA0NzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxZGZkMmZlODc3ZmM2MDJmZTliZWY0YTE1Y2EyODA3YzIwMDk0MjRhMzM4YmY5YTc3YWQyZWZiZjNkMDkxN2YifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L237-L275",
+          "version": "repo-lines-v1:sha256:ac0e58076ce0612ba8b85705e7b087ae2ded56075e8f5f4478e45268e75bd951:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTVjNjgwMTFiMWZlMTIxZjUzMThjNTI0OGEwNTRlOTU0MWZmMGI5NzFlYTYwNzM5M2U3MWU5ZjBlMzkzNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkZDI0NDU4MmI2ZmIwM2QyM2I4NDE1YWJlY2QzNDZiMGM5ZjQ2NmI2Zjc1MmIwNjgxODljZTdlOWEyZGMzNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlZWUzZmExYWY0NGIxYjkxMjA2OGQ5ODM2MjY5MjhkZWRkZjU2YzgyNjA0MThlZDNmNDAxMTQ3ZmI1ODg2YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjZWFhZThlNjk2NGM4YmZlMjAwYThhYWIyMzU0YWRlYTNhNmNhMTNjZDhmZDM4ZTUyZTFmOTZmNWFlM2QyM2EifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-28T15:38:38.058Z"
+  }
+}

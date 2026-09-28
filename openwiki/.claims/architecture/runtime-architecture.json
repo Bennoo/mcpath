@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:93182c6c753dbf6c0eb98b77f65741e87ef603256ec26962478f4b4cc8b3d2c6",
+  "claims": [
+    {
+      "id": "claim_ad492a9ac35c42be8c8e0d4734be3c80",
+      "statement": "The `mcpath` CLI parses the mount root, read-only and deny options, output limit, and stdio/HTTP transport settings; it constructs a URL-backed VFS, creates the FastMCP server, and launches stdio without a banner or HTTP with the configured host and port.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L17-L18",
+          "version": "repo-lines-v1:sha256:4301e51bc1a7126876bfff874bbd294161596f5212d32bb48c42f2ad3aa44f39:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGVhYjRlYzYzZGU1MTdkYTRjZDhlNWM4MzA3ZmIyYzc3MzdkMzkxOTBhYjY5ZjMyYTVlOWVmODFlYTQ0MTZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjM1ZmY0ZDg1OTM4ZDdiYWU4MzZmZDE3N2U1ZDA2NDMzMDRiYjg1MDcwZDlmODBkYjIwMzhhZjdiNmUxZDNmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTFlZDhmNDhhN2E2ZWM4NDQ2MTYzY2RiZGY2MjRjZjRhZDEzZmUwYjAxYmM1NTEzNTE4ZTY3OWFiYWQxZWE1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjNjNDEzZDBmYmIzOTA3OWRkZTlhMWIxMGY3YjNjYjJiNjcwY2Q4Y2NkOWNhNmMwY2FiNzc5MmVjNTFkNjQxYyJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/__init__.py#L8-L43",
+          "version": "repo-lines-v1:sha256:8de5f24428a9f68e5779ea6611d38109505a908c89f58a7b408506a733c1730b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhZmFmYmU2YjlmOWI1OGYxNWNjNGE5ZGNmNzZjMjFhYWQ3ZDM1YTA4M2VhODZlOTI3ZTIzNWFmYTExMmY5NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMDk0OTAyMjc1NmQyMmIyYzIyNGJkOGUwNzQ4MzVmMjYyZGRiZWE0ZWMyMzYxZWI2MGRlZWJlNTZkYTc5MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljNzFmNjFkYTUzYjUxZjQwMDBiMzczZDZkYjBjZGUxOTRkM2ZkY2EwZDNkNDhmMDJkYTNlOTI3NTVmZDk0MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L66-L92",
+          "version": "repo-lines-v1:sha256:df195c9baa5a8f89cab4ea3823f596c7edb89d6bed05da19ee9dd4c3d967735e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmNjQzMTI1YWZjOGQyNDhhMTFjZDcyODcwNThmYTgxZDQwN2I2MWM1NDNiN2IwYzJhNDQ5YzhjZWY5MTU1YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MjMzYjU0YzZlNDdmODhkNjhhYjIwZmY3YTAzOWI4ZTVlMTgxODMzMjU5MjdmNDdmMmQyZWIxYzNjNzMwNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmODNkNjMwYjRlOTQ2ODdhZWNjYTdhZmQ1YTM2NDVkOTkxOGRkYTJhYjlmMmJlZTAyZTFhYzAyNDg4Y2VhZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1ZGEzMWMyNDk5MTQyYWFkZDYyYTU2OGY5NDRmY2FjZTVjZDczMTBjMzA1NzUxN2NmMjhlOGMzYTk4MmJjZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70fe564c28d74cf7a9d2ad88d28c4639",
+      "statement": "Each `create_server` call constructs exactly one `Shell` and one shared lock; both `run` and, when present, `edit` execute their shell-dependent critical sections under that lock, preventing concurrent calls from interleaving shared state.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L82-L135",
+          "version": "repo-lines-v1:sha256:c4bb3102d144dd9bff1610ccec448e7937731777f9444d1ac69181d7a68b0e0b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3YTk3MDVhNjBjMjc4OWRiZTMyYWM1YmNhY2Y5MTU2ZTg0MWY2NjZjMjExMzU3NTUxYWJkOTFjYWI5MDllZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzYmIyODZhOTc5MGUxMzMwNzYxOTEyNDI5MDcwOWFhZDRkNjAwYzgxNjZkYzFkNDA4ZDE4MDczZGExZGEzM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyYjUyN2NkZTI1NTQ1ZWU5YTc3ODEwMDYzOWQ4ZWY2ZjI2NWNhZWQxYWYyYTMzNGUyY2IyMTIyMzI0M2VkNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0ZjNkYWQwNDVlNmFmNTc5MzYwMDk3YTU2MWI3ZjUyYTA3ZTUxOTIwYzI3MzgwMTFjMTMwMGZiYzc4NWY4YjgifQ"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L77-L88",
+          "version": "repo-lines-v1:sha256:6da48a81803c5dc7150214782b872220659c5eb3e8764893ea9380794ef5dad7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliZmY5MTZhZWIyY2NjZDA0NjBjYzA0MzBkNWUzNzMxZjhjYmE3ODkzMDI4YzQ1NmJmNDZiMzlmMDQ0YjQwNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjMDM5NTUwZmE2ZTc1NjRhNmQzZDJlNzhiOGY1YjRiYzY1ZmFlY2Y4ZmIzYTFkMjFkN2U1MTE3OWRlZmNjNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkMWM5MTBlYmE1NTgyY2M3YzkxNDViMGNjYzI2MTk1ZDk3ZmU2NjNhN2Y0YjNiYmJhYjBmNDZiZDFhYTFjYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYWY5ZTAxMzE4N2JkMjcwZmRhMmY5ODc3OTg2NjFkMjNhMmVlZjAxZDRhNzMxYTdhN2VjZjAxYzkzMjZmMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2922c6881804267b4fea0755fce24be",
+      "statement": "The server's single Shell owns a persistent Session whose virtual current directory, environment variables, and last status survive across tool calls; under stdio that state normally lasts for the client-owned server process, while a longer-lived HTTP server instance shares its one Shell across calls rather than creating per-client shells.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L12-L15",
+          "version": "repo-lines-v1:sha256:b80b6f970836973ca077b4fd03e2764d6ffaf4496f23a873ea40eefc3fcae1eb:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFlYTRlZDUzODc4MTI2YjVmOTkxNzIxNGJlNzMzZDgxNDhkZDhiMWIxYTZiYTU1YmY3MWVkNGIzOTQzMDhkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDI1Yzc0NjQ5NWU3MGNkYmU2MzI1NmNhNjFhY2RiMzUxYWExODhjOTllMDViMmRlNGQ5NzRlYzM4YjNlOWQ1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDU2YzkxN2M4NGQ0ZjI2OWFmM2ZiY2UxMmE3OTRjMzIwZWU0YzcwOTcwNGI0NTViYzNkODY2ZTNmYjk1NzEzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQ0NTBmZTJiYThlODZhMjJkNDhlMmI5MGI2NjY5ZTc2MmJmYTBmNGZhMTEwOTE1MWFjZjM2OWM1MDg2YjI1MiJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/server.py#L82-L104",
+          "version": "repo-lines-v1:sha256:6f5133c16650b266599754361afe0be61b6fe82b762ab2311c7bb954bec74245:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3YTk3MDVhNjBjMjc4OWRiZTMyYWM1YmNhY2Y5MTU2ZTg0MWY2NjZjMjExMzU3NTUxYWJkOTFjYWI5MDllZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxNTJhNmU0NDYzZTkxNGY0NDQ3NGUyOTQ5NGVlYmI4YmM5ZGMxN2NiYWQ2NjBiNzZhOTJiYWIxMWM4OGI1NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyYjUyN2NkZTI1NTQ1ZWU5YTc3ODEwMDYzOWQ4ZWY2ZjI2NWNhZWQxYWYyYTMzNGUyY2IyMTIyMzI0M2VkNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4ODQxNDYyYzEwYjBhMTkzYjc1ODhjNDI1ZDBmYmFmMmQ4MmQ5OTBiZmQ5YjVhYWRjMzljZjg2ODFkNzE2MTcifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/context.py#L84-L99",
+          "version": "repo-lines-v1:sha256:5e8023363ea8e1ea1dc3dcc31d1d66dfb63297bc2cdcc8953ea6e5062569e25f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNjMzNDgzNWM4N2Y4MDllYWRjY2M5NDgxZGExMjFlOTQ5MzY4NGIwNTBlODA1ZWJlM2Y3ZWQxYzRjYjNmNWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4MDU2Zjc0NjhkYmQ1MDQzYjgyZWE5ZDJkYjBhYTM5ODMzYTk0YmE2MWQ4NmY1ZWFmZDAwNWFmOGFlMjBjYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L69-L93",
+          "version": "repo-lines-v1:sha256:3546a8cc16230f5db5a3d218423b40035f8206d723d10b91833ba089c89b3720:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzN2JjMDc1ODM5MWJjMDBlZmM0MWY5YWE5YTQ0Y2RmMzlkMTEzZDZmZTM0NjkxZjYzYmM4MWE3NTM4NWNkYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxYTA1Y2FkZGFiZTExMzlkNWIwMjJkZTg2YThlMWIyODBiNGUzMjk4ODc2ZDllZDhmMmU5ZGI0YjY5N2U2OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZmI2ZjE0M2UzYzY1NzA3ZjUwMjg1N2Q0MTJiMjZiMDcxOGYzYjUxZjdlZThmZTQ4ZWJjYjM4NzgzOGUxYWMifQ"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L77-L79",
+          "version": "repo-lines-v1:sha256:c6a870f37e5439cdec89d9ac82112a1b02a947aa8863682ee1bc5f3d107d8aa5:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJmZjkxNmFlYjJjY2NkMDQ2MGNjMDQzMGQ1ZTM3MzFmOGNiYTc4OTMwMjhjNDU2YmY0NmIzOWYwNDRiNDA2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE4MThlOTgwNWM2YzhjMjYzMmI5MWI0M2I4MzFmMTQwNWU0MTEzZGU1NDQyOTM2NTU4MjZhZDZjZTliZjQ0YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmQxYzkxMGViYTU1ODJjYzdjOTE0NWIwY2NjMjYxOTVkOTdmZTY2M2E3ZjRiM2JiYmFiMGY0NmJkMWFhMWNhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk3MDliNTgxMTIxMWYyYzFkZGIxMGQ2MDE1NTQ5ZDUyMjYwNjFjM2RjNzNiZWE0MDc1ZjFhMjBkOTdhNzMzOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_341beb1460a54132b166bb995b40d793",
+      "statement": "`$?` expands from the Session's `last_status`, while subshells, command substitutions, and multi-command pipeline stages execute with copied Sessions so their cwd and variable changes do not leak into the persistent parent session.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L100-L124",
+          "version": "repo-lines-v1:sha256:24882235c7c1e209a8e8ea2d895d80dd9b00534f3cd00d5b69c93b4a1cc9a1e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3ZGQ4NjhiYTNjNTljZjI4YTU0MmE4NjgyMmYxODkwY2RkMmYwY2RiZWMxYmI4ZDc2ZjE3NDY0YjliZTY0ZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNzZiZDM3ZGYyNTFiNjA0YzI2Y2YwZjA3ZGJmOTE4NTg0ZjhlNzFjMTU5NDQ1M2UxNDllNmZhZWY4MzIyZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3ZWJhMGFmOWMxOTllMzZmY2M0MjMwZGFhMmQxNjRmNjZjNTNkNzhiYTg3NDZjODA1YThjMTkwNTU5NTRkYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhNTI5ZTE4Yzc2NTcxOGI2OWNkMGUxOGFiNDE0OWJjNTA1YTUxMGZiMTBiOTAzZWY0MTQ0YWQ1MjA2YmMyNzAifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L174-L180",
+          "version": "repo-lines-v1:sha256:cf2068b11a89ced1e6487b0c87a4b41ceb791ccdfd5e5fc7972d1008093e8012:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FjNzM3NzQ3NGE3NWZjY2QxMjkwZDI4ZWU2ZGYwZDgwZGY3YmY2NmQ0NzVhMGUwYWQzM2UxMDRkN2RlMDUzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQyYzA1ODc2NzhkYTQ3ZmRhMmRlNGE3YjcyNzA5YmM4N2M4OTUzNjhjOTVhZjg4ZTZlZTI4YzJlNzkzMzAxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQ5ZmM0MzAyZGM2MDYwYzRkZTlhMTI2MWEyMDk1MWI0ODZlMTZmNzc2ZWU5ZTg0OTg0MWIzZmU1YjY1M2E2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOThiNTgzODE0ZWJlOGY2Y2Y0OTQxMDg4NDFkM2Q3NmUwNzI4ZTYzNzMzN2IyZTRmZmFiMmRiMGVhOGNjMDZiMiJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L244-L265",
+          "version": "repo-lines-v1:sha256:fb3ee0f5298a9e7890ff178c2333e72261e16b45af4aa2e116869f6fa95073aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwNDAzNjJkZGFkOTk5OWYzZTk3OGFiNDI2YzVlNTJjNjI2NzllN2U0OWY2MTYwMmI3ZGM2MDQ4YTdjYzc3YzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNzZiZDM3ZGYyNTFiNjA0YzI2Y2YwZjA3ZGJmOTE4NTg0ZjhlNzFjMTU5NDQ1M2UxNDllNmZhZWY4MzIyZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkYzc3Y2M1MDU4YzEzZjJkNWRjYjk2ZTI3ZDE2ZjU0YWNhNzg3MzNiYWYxM2NmMmNkMTMwZTA4NTBhMjE2ZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3YmYxMTgyMDdkMTZhNzg5ZGYzNWNhZTViODNiNGE5NGEzMzNlOWVlYzBjNDY4YWJmMGIyMWViYjJhMjY5ZjgifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/expand.py#L68-L79",
+          "version": "repo-lines-v1:sha256:153e689b149472e77aef39d76eb9094ca3d33e7bf52eaa5957a603576904c16b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNTQ2NjIyMjllYzhkNjkwMDhhYjBmYWM1MTcxNjI2YTBiZWM5YTVmMTQ2M2Y3ZjI2NWExZmMwOWU0MGIwYmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NDA5Y2FiMzc4YmRmYWNhYTEwMmUxMjc2M2ZhZDMzZjQ1Y2NhZjZlNTUzZmIyZjVmMWEzNTUzMmNkMTg2NDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5NzhmOGEwODJjNWJlM2JhN2EwZTAyYTIyMzU2MTExNjMxMDAxZWNhZWUwN2RmYmQzOThjYzczODAxNTRmYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYmU2YWU1Y2I3ZjFlMzlhNzY2ZDMyYzI2YmM0MTZmMGM3NTE4Yzg5MjRiZTdlZWU3NzBhNGFkZjFiMGJmYjEifQ"
+        },
+        {
+          "resource": "repo://tests/shell/test_executor.py#L137-L152",
+          "version": "repo-lines-v1:sha256:7a4098581a36eeb135d8ebd98bed544190c05cc9b501541a3e7227b7626e4329:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwYWVkNTlhMjM3NmNlMmNmYTM0MTFlNGZjY2E1NjVhOTcwNjExOTBlYjNjYmNjYWZhOWJjY2EyOTBlYjgxYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOTkzZTg4YTE4OTNkYjIxYzBiZTUxMDQ3OGY3NDM0NjFlZDk2NmZjMjE4ZWE0ZGVhMjMyMjE4ODJmYTdmZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjNmM5MjY0OGQxYzRkNzcyOWE4NzdjMTJjYmU5YmZmMjE0NWM2N2VkNWI4YjA5ZWFiNDE4OTc2ODNkZWZkNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwYTMwYTYxOWNiYThhMTJiYWYxZThkNjQwYzkyNDc2OTg1MzA0Y2YwNTQ2MjMzMzkzMmYzNTA4MmNkZjYxYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91299dc0e1b44cee8ac83a9731cc8555",
+      "statement": "`run(command)` interprets commands in-process: `Shell.run` creates in-memory streams, parses and executes an AST, dispatches simple commands only through the Python builtin registry, and converts parse errors, loop limits, unknown commands, and builtin exceptions into shell statuses and terminal diagnostics rather than spawning host processes.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L34-L43",
+          "version": "repo-lines-v1:sha256:50478be2f5420268dcf989ff8f82df24775a64e0226e4d4ba06ff6aa4beafc68:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4MGMwZjVhMmUwMjIyZWY3Njk0YjZlNzNiODM3ZWU3Y2Y2OTI4ZDI4ZTYwM2MwMTg2MGQxMmYzNzQ3ZTBjMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViM2ZmNGUzOGNhMTYwNjgxMjliMWY3ODZlZmI3ZjMzZjBkMjBkMjY5Njg3NjI0N2ExNmZkMWU5ODY5MmI5MGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyODkxODVjYTFjNTUyMmUyMzQ3NGIxNmI0ZmM1NDk1MmU0MjRiODk4OThiYmY1ODBkMTcxMTYxNTdmMDVmZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMDQ5NDEwOTMyYTdiOTc4YTQwZGZlNjFiMzFiNGY0NjFhODFhMTYxYWUyNDc3ZmVhMDI1MmE5M2M5MzcxNmQifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L69-L93",
+          "version": "repo-lines-v1:sha256:3546a8cc16230f5db5a3d218423b40035f8206d723d10b91833ba089c89b3720:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzN2JjMDc1ODM5MWJjMDBlZmM0MWY5YWE5YTQ0Y2RmMzlkMTEzZDZmZTM0NjkxZjYzYmM4MWE3NTM4NWNkYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxYTA1Y2FkZGFiZTExMzlkNWIwMjJkZTg2YThlMWIyODBiNGUzMjk4ODc2ZDllZDhmMmU5ZGI0YjY5N2U2OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZmI2ZjE0M2UzYzY1NzA3ZjUwMjg1N2Q0MTJiMjZiMDcxOGYzYjUxZjdlZThmZTQ4ZWJjYjM4NzgzOGUxYWMifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L96-L172",
+          "version": "repo-lines-v1:sha256:5ce96b238c93dfce650d371516d39617c1f4548126610664678a13116bc602b1:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNjU4MjBkNmZkODZkYjA3Y2FlYjc5NjliZTg4MWFkZjhkYTI4YThkODA0ODQ2NTZmZmRhNmZmYmFjZWM2NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlNzU5NjJjZjg3ZGJiYjM1NjM5NGE3MTczMzkxZDM1ODAxY2U5NDc2YWIyM2U4ZDkzMGQ5Mjg2YzA2ZThhYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MjNiOTNjMTE1ZmYzYmQ5Mjc5YjlkMWFmZmZlMDg3ZDIxMjBiZDE1Y2Y3NDdjYmQxYTMyYWJkYzk3NjRiNWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_79cec1cd91064fb596239ff0ed4b9527",
+      "statement": "Shell stdout and stderr are separately captured while being interleaved into terminal-order output; pipelines pass buffered stdout into the next stage, and file redirections are implemented with VFS reads and writes, except for the executor's in-memory `/dev/null` special case.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/context.py#L43-L81",
+          "version": "repo-lines-v1:sha256:970444757f29ad1eece1ff37ec7ed53a1b992acf35ff074203fad8e64b152990:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjZDdmMmU2MmM0ODhiYzVjZDU0YzM4ZWMwNjVmMDgwMDdkZmNhMWZkMjljZjE0MzgwMTIyMDliOGRjNTJjMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3ZGNiMDVjOWU0NmNiOGU5YzIxYjBhMGRmNzBlM2Y2NGJiYzVjOWFmOWU4ZWI1OTJlZWE1MTdhNDBmN2Q3Y2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkODdjYWZkMDM3YmIxMWRhOGYwMjdhYTllNWE4NDI4MTU2MzkwNTAwOWNiM2Q1MDIzNWZiZDZmNjJhNWQwMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L184-L240",
+          "version": "repo-lines-v1:sha256:cafb9551f25631903a6e887851d7336d8e6050ea16af170114d454d430da90e5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2NzA5OTQ2OTA1YzU4OWQ0MTQyZjNiODAwMDQ0MzU4NTU1YzgzZWFiN2Q5MTVkMDAzNDhhOWYxODI0YTM2ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwZjdkMjU3YjE3NmMxZjg2OTMxNjg3ODZjY2E1MzNlMmFiYWJkM2MzY2NiMjgzYWE3MzI5OWI4OWQ2MDkxMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4YjU4MzgxNGViZThmNmNmNDk0MTA4ODQxZDNkNzZlMDcyOGU2MzczMzdiMmU0ZmZhYjJkYjBlYThjYzA2YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkYzc3Y2M1MDU4YzEzZjJkNWRjYjk2ZTI3ZDE2ZjU0YWNhNzg3MzNiYWYxM2NmMmNkMTMwZTA4NTBhMjE2ZjQifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L242-L265",
+          "version": "repo-lines-v1:sha256:c311cfd939f648c4dc51327fc9b8c22df362164ecfffab821decf53494657fc3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxYmM5YTJlMGVjMWMwZDc1NGEzZDdjYWM2NjZhYzBiYTVhNmFiNTNiN2ExNTFmMjIzYmM5ZjdmMjg5Nzg1N2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNzZiZDM3ZGYyNTFiNjA0YzI2Y2YwZjA3ZGJmOTE4NTg0ZjhlNzFjMTU5NDQ1M2UxNDllNmZhZWY4MzIyZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwZDI5MGI1ZmQzNDFiMjU1ZDllNTIyODA5MDI0NjBjMjA2MmM3ZTk0MjU1ZjY3YWQwN2EzNTg5MzIwMjE2MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3YmYxMTgyMDdkMTZhNzg5ZGYzNWNhZTViODNiNGE5NGEzMzNlOWVlYzBjNDY4YWJmMGIyMWViYjJhMjY5ZjgifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L33-L55",
+          "version": "repo-lines-v1:sha256:746735d54e8764845aae44279ae06a27a13f0532eac06525ab7ad01350d11693:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2OWExMzk3NWMyNTZlYzgzMjBlMjAxNjA4M2M5NmRmNjM3Y2EzZDM1YmViZGUyMzE0YmVlM2E0NzExYjU2Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyNGU3ZTRjNWFlNDM0MWI1YTVjOWM5MmU4NTJlZjA0NTIwMDAxOTFiODc5MDI4NzMxZmQ3ZmNjMGJiOGFmYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkM2E4NWMyMDRhNWNjMTNlODZhZjBjNWNjMGU2ZTkzYTAyNzQyZjEzYWFjYjViYmNjZjVmNTVmNjcwMDlmMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhOTBiMThiMTFiYTNkNTlkODgzMjIyZThlOWI0YmMyMmJjZjBkNTlhMzBmMmRlZjEwYjBkNDAyZjUyYTVjYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9ba4d6d18d24a6b9670019ddc3b9c13",
+      "statement": "`format_output` truncates oversized `run` output by retaining the beginning and end with an omission note, then appends `[exit N]` for nonzero status; command failures are returned as text-only successful MCP tool results rather than MCP tool errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L64-L79",
+          "version": "repo-lines-v1:sha256:243843f9691b421b949eff65c7e6b731adc38dce0aee61ab67acf3a5c30ecd06:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNDkxODg4MzI5ZTdkMGRjODkyMTNhNzNlN2ZlYzVkYjg0OWNhNTZiNmVmMTViNjg2ZTk5Nzc2M2E3ZWY0NGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYjhmNGY0MTM1OWY2YzBiZjdhYmMwNDdkNGM1Nzc0NTcyMjMzNGY1ZDJkNmU3MmUxNjZhNTViM2EwOTc0NzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0N2NhYTJkMjcyMzEwODcxNmViMzFhNzY0ZDdlODU0YjNiMzNjYTYwYTYzZTljOTBlYWZkZjc3MTY5NzMzNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjYjE1ZTg3NTA5YzAyOGU5ZGE2ZjNmZTFiMzdlNjNlZDhhOTNhYTA1NmMyYzk3YWM2NTZmMDE5ZDc4OTdiYTkifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/server.py#L99-L104",
+          "version": "repo-lines-v1:sha256:638b8a3366fce6716e73857e1c71b511742e8c9349f7bfa2e8f5ebfbb341bb99:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA4Y2Q5Nzk2OWI5NGY3Y2FiZDlhYjg1MmNkZWNkYzljZTk5ZTUyZDcyZWMxY2QxOGI4YWVjYTI5YTllMmJlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE1MmE2ZTQ0NjNlOTE0ZjQ0NDc0ZTI5NDk0ZWViYjhiYzlkYzE3Y2JhZDY2MGI3NmE5MmJhYjExYzg4YjU2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJlN2QzMDJmMzMxZjg3NjQ3ODNhNzc1OTAxMDAwYmJlMWEzMDMyOTE2YTYxZjM4YjJmOTdlODhkYmQ4MWI3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg4NDE0NjJjMTBiMGExOTNiNzU4OGM0MjVkMGZiYWYyZDgyZDk5MGJmZDliNWFhZGMzOWNmODY4MWQ3MTYxNyJ9"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L100-L116",
+          "version": "repo-lines-v1:sha256:a43027b328468b778da9a2989a742cd278803e1d91f49e193fae50c62430bedc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjZjQ5YWI4YWQzMGM4OThmZTFhMWFlZWNiMzhjMjQ3MjA0MWQ4YWY2YTE4ZmVmY2RiZDA2NDI2ZDdjZTIyNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhNTg2NzEyNDZjMTI3YjA1MzMyODVjYmQwMTgzOTQ2NTZlMTQ1NzRhOWNlMTM4MDdlODYyNmM0NzA3NzM1ZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkYmIxMjc1NTJjOTBhNTMzNDIxZjZmMzZhYTY5MDEyYWFkOTc2ZTVlZGM3MzQ2NjNlMWU2MDVmMDFjYWRlZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjOTAyMWExMDhjYzA4ZGRjMzU3ZGIxY2UyY2JhNTFmNzA0NjA1ZGI3MmExYzE5MzM2YjE0NWFkMDExN2IxYzAifQ"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L64-L74",
+          "version": "repo-lines-v1:sha256:e4a232d1cfdf6e6979a09caeb8117111730af00f7c94ab429c48961cd95cb864:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YzY5Nzg5ZTQ2N2M1ZWExOWU0NjJiNGNkNWY1ZjBhYjllMGMzOGY0NzM5ZWE1MTlhZDMwNGFiOGFmMGI1MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZWUyZjA5OTVkNmI1NWUwYTEwNDEyYmNmNTZmMGJkMTk4MzNmNDNiNmE4MzFiODNkNWQ4Nzk0ZTI2YzRlZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNDkwMDVjMzc0OTU0OTRiZmE0YzllZDI4NjgxNzNlYTg5NmI5NzRlMjQ1MmU0ZTA0MDliYWU5ZGU5NGQwOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4Y2FhMjI2YjBhNWU4YjQ1Zjk1NzFkNDIyYTI1ZmM2MDUzODE4MmUwYjRjODc3NGQ2MTllM2I5MDllMzE2M2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_57134f501bb44f46800c65647d65bb8b",
+      "statement": "Writable servers expose `edit`, which resolves paths against the persistent shell cwd and performs either exclusive creation when `old_string` is empty or UTF-8 exact-text replacement requiring one match unless `replace_all` is true; successful replacement rewrites the file and returns a numbered context window.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L109-L140",
+          "version": "repo-lines-v1:sha256:7efb477cb1da9fbef068a5d2ba02ccf44c3f137bafe4ad027ec38ef9a54ab403:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlOWYxYjY3ZGE0ODc5OWQwNjg0NzJiZWViZmEwODIxODdlYjgyYTk3YjhkNmY1YWM0MGM0ZGU1NGY5NjRhNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4OWMwZWE1MmU3ZGMxNTg1MjVkYTVjNDdjYjAzMjAxZDFkZjQ2YTVmYTE2ZmE4YzFiMGEwZWUyYjkzZjY2OTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5ZTE2ZmNkN2I5ODhhNjFkMWNlMjEwZGQ0NjYwZGYyYjQ3MWVjMzVlYTg0MTgxNTdkODJlMDQ0OGE0MjlmZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyZjkyMDY0M2ZmN2EwZjhjZmYyMjhkMjhjMDAwZmJkNDdjZjNjYzE2MzI1ZDA0ZDJmMzgyNzdmYmI0NTllMTEifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/server.py#L145-L189",
+          "version": "repo-lines-v1:sha256:2479162782e5a35412cda39580873528bf629e2249a7c6c46e15401665778432:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3N2MxNDM2ZGUwNzdhZjI2MWExODhjZDIwNDM0MDViNzZiNzJmNjNlZTY2NzkyOGViNmQ0ZDA3Y2E2ZDZjMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZGQxYmI1ZTk5MDJmYzY3NGY2Yjc4NjA2MDU5YjAxYzhhMjc4YjgzZmE3YmQyMjZlZGEyMmZmYzVlZTVlNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzOTUxY2JmOThkZGQ5ODQwZTFiOWQxNTY0NDFjYTVmODhmN2I5N2RiYjE5ZDQ3ZjAwOWFiYjQ3ZGE2ZTVjNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L126-L174",
+          "version": "repo-lines-v1:sha256:09c54d6bd7f71852da02d64d5965a35dfbe8f58e7bb0ac2adeddd2f93e62adf8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjZjM2NGRiNTlmNmViMDI1MGU2MWMyZWNjN2ViZDdlMjNhYzY3OWY1ZmM5NDkwMzJhM2VjMzRlMmRjM2ZjNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMDE2MTZlYzJhZTUxOTI2YzcxMmFhMDE0Mjg3ZmRhNjZlYWI5YzgwYmQ5MTExODY0MzQ5MTMyMTlhMTM4OWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzMDA4MzBmZDVkMzBiMGFiNmQ0MzdlMTEzMTI2ZDhjYTVjYTI2ZGE5YjExM2JmOWRjMDllMzRkNjUzYmQ2NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjZjQzNDkzYTBkYjMxMDk5ZmU2MzEyNDZlMDQ3YjliZWVlYjdkOTIyYWY1MTY1MjRiNmViYmMwZTk4ZmJiMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ce36491f6ac45aab9f781938ddc80f5",
+      "statement": "Edit contract and filesystem failures are raised as FastMCP `ToolError` responses prefixed with the caller-supplied path, in contrast to normal `run` command failures; `edit` responses do not pass through `format_output` and therefore are not subject to the run output limit.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L128-L143",
+          "version": "repo-lines-v1:sha256:98e774fa84d8f120122205a689e6e83120fac83bf238a8c5945beec230ea0699:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNDQ0YjJmYzIyZGQ5Yzk3ZDM3ODczNTMxNmFiNjg4NTBlN2Y2NWExODVlOGNhOTJhYzExNzM3YjMzYzViMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMmQ2NGViZGFkMDRmMGQ0OTk2OGIwZTRlZDJiYjgwNDI4YmMwNjJhNjhjOWRmZWQyMDE3N2U0MWQ5ODE1YjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyMTNkNmU5NzcyYmYzYmRmZjhkMzFjOTYwYTVmZWZkNGI1NDc5YjA1MGM2MzMwMTVhODM4NWYyZDlmMTQyNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1MTRjOTcwOGQxZDAwNDljZTU0N2Y3ZGMwZmM4NGJjNTU5NzAzZmRjMTIyNmJjYmJjNGNkOTgxMzk5M2MwNjAifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/server.py#L145-L179",
+          "version": "repo-lines-v1:sha256:1ac6373b3af558c16cc0a59c8cf5dc52f94119dd63ded2ef03fbf04640daf9ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3N2MxNDM2ZGUwNzdhZjI2MWExODhjZDIwNDM0MDViNzZiNzJmNjNlZTY2NzkyOGViNmQ0ZDA3Y2E2ZDZjMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzOWZkYjZiYTYxNjViMzYxOTU0ODI4YjBiZTQ0YTYzMTQ3ZmZmMDhjMDcwN2Y2NjY3NjdmNjc0YTU2MjY0YTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzOTUxY2JmOThkZGQ5ODQwZTFiOWQxNTY0NDFjYTVmODhmN2I5N2RiYjE5ZDQ3ZjAwOWFiYjQ3ZGE2ZTVjNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4OGI5ODc1ZTM5YmE0Y2RmNmU5NGYyN2M2MTI2ZDNlMmY3ZTQ5Y2M0NDQ3OWU5YTkyMjJjMzRmOThkOGFlNzYifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/server.py#L99-L104",
+          "version": "repo-lines-v1:sha256:638b8a3366fce6716e73857e1c71b511742e8c9349f7bfa2e8f5ebfbb341bb99:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA4Y2Q5Nzk2OWI5NGY3Y2FiZDlhYjg1MmNkZWNkYzljZTk5ZTUyZDcyZWMxY2QxOGI4YWVjYTI5YTllMmJlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE1MmE2ZTQ0NjNlOTE0ZjQ0NDc0ZTI5NDk0ZWViYjhiYzlkYzE3Y2JhZDY2MGI3NmE5MmJhYjExYzg4YjU2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJlN2QzMDJmMzMxZjg3NjQ3ODNhNzc1OTAxMDAwYmJlMWEzMDMyOTE2YTYxZjM4YjJmOTdlODhkYmQ4MWI3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg4NDE0NjJjMTBiMGExOTNiNzU4OGM0MjVkMGZiYWYyZDgyZDk5MGJmZDliNWFhZGMzOWNmODY4MWQ3MTYxNyJ9"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L137-L167",
+          "version": "repo-lines-v1:sha256:b6a1e277d175ba3b02724e14533bc05196f424376d0248a9b8af5ac10a6456c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmODgyZGYzMGE2NDc4ZWJiMWExNmE0MTE3MjMxNzU2ZjY3ZjU4ZTQ3NjNhYTY4M2EwOWUyNDJmNzY5MGNkYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiZjkxNjQ4Y2EyYzMzOWZiYzA3ZGI4ZGMxMzQ2N2M1OTU3ZDE0MjQ1MTBjYzJhZWIzYzU0YWU5OGZlOTVkZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1NWY2NjljMTgyYjM0OTdmNTMxYTZjNTQ3YTdhZDZiOWZiMzFjZmQ1YTNkZGNkZjNhMWZhMDY2Y2U0ZDQwNTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ebfe3aad5bbb41d6abda4b3d9cf76a5e",
+      "statement": "Every VFS public operation resolves and checks a virtual path before backend mapping: parent traversal is clamped at virtual `/`, denied path components are refused and hidden, and local symlinks resolving outside the configured root are refused and hidden from listings.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L157-L197",
+          "version": "repo-lines-v1:sha256:d58a7282f5a5996c57d7cf023b7e1313e5b8b546ae388b9e743bb6450d6d75c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YzBlZWI3ZTFhZjZiYzlhMDg5YzJhZThkMDUxYTNkMjZkNzNiOTRmNDYyYjk2ODQ2MGVkMDkxYzg2NWFkZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMDg4MDRlNDlkYTMyYjdjMGEwNzBmMWU2Y2JmYjg0N2M5MzQxZGU3OWI5YTgxOTUzNzA1MDA4OGQ5ZTJlYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4YmQ5MmVmMzUyOTMzODAxZjMyMzU2MjQ2OWI3M2UyYTkxZDEyM2Y5ZDM3YzFhOWFjMDMyNDZlNjk0YWJlZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjNzM3MzdhYWViMGM5ZmU3OTMyNWQ4MGY5NDE2ZWEyODFjMjYxODI4M2RmNTcxOTUyMWE4YzM0YzU1Yjc0MjAifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L98-L136",
+          "version": "repo-lines-v1:sha256:afd8ede7b61063fe811222df671b26217760b7381050d9470f9372d70f9a4905:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWJjZDBjYzY5MTNkNGY1MWViMjFlNGY1YWZjMmU5MGY4NmQzNmE0NTBiYjQyY2IwNWM2ZjNlMGQ3MDZmOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNmY1ODZjMTJmN2Y1ZTA0YWI2MDljZWE5YmZiMTRhY2NkYmY2YmI2Y2Y0ZmExMWI5MjRlZGRmZDZiMzRiOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NTY2MDczY2I0YWQwN2E0NDMxZTkyOGI5ZjQ2YTNlMzJmZDNhOWUxNzMwODVlYjNlNjNhYjNlY2Q5ZjhiM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkNDA0MjhmZjU0ZWUyZDJmN2YwYmM5NzQwNjhjNDE4ZmQwNGM2OGYzMGM2NDIwYTJlMGRhYTU5YjNjYzViZDkifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L104-L132",
+          "version": "repo-lines-v1:sha256:066ef7fcc0f4a241fbe10e59609c09cc54424a6e43cbffb12b083ef8e548e93e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMTMxYTU3YWU2ODdjZmY2Yjk4OTljYjAxNGQ1MDU4NTgzMzg4ZGFjYTZlYThiMGRmZmJlMGFiNTljNzViZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZjRlYWY0NGU0NmYxMmY1MGE4MzZmMWRiNTMyZTdkYjk2Mzk4NTYwMjY0NTNhNGU0MzQ2NTViMGY3MWYyMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjNmI5OTExZjNiZGYwZWQ3YTEyNWZiM2VhODk4Yzk1ZjM2NTA0ZmYzMWVlMWZiYzA5MTlhODZhZTUzMDQ1YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiNzQ4NGZkNDRlZWJiNzc4YWE1NzQyOGM1OGY0ZmNlMDZlZTU2M2JmODk4MTYyNjhiODA4OGRmNzc2ZGEwNDIifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L237-L266",
+          "version": "repo-lines-v1:sha256:aedfa5b3bd22469187cc504cbc66d9de8034bb0870db3b409ca44edc598563dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTVjNjgwMTFiMWZlMTIxZjUzMThjNTI0OGEwNTRlOTU0MWZmMGI5NzFlYTYwNzM5M2U3MWU5ZjBlMzkzNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3OTlhOWNkNDg0ZWE4NTJjYWU4NDljZmVlMTgwOGRhYWQ4MGM5YWNmN2M2YzUzZDBhYjU5NzIzYzE2N2I4MGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlZWUzZmExYWY0NGIxYjkxMjA2OGQ5ODM2MjY5MjhkZWRkZjU2YzgyNjA0MThlZDNmNDAxMTQ3ZmI1ODg2YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzNDM2MDE5MzVjZjZjZGFiM2I4NjJmNjhlYWFiNzBlYzllY2Y3MzQ1MWQzMzM2MDgyMjNkMjM4YTQwYWQ1OWQifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L51-L73",
+          "version": "repo-lines-v1:sha256:cf5d45a1866eebeb27f4dfc7cbf9777804d7e6d71a44930f633aa3dc311c2252:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2JiOTUyNjZkZDdjOGQ3YzkyYWJjNTVlZjJlMTU2N2MxYTU3NjhiODcwZWY1NjdlZWI2NWI5MzhkNjM3ZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZmJhNjE3YWU5YWQ1YWIyNzhjNDg2YzYyOGFjMzg1M2E1ZDVjNmVhNDk0NTdkNjhjZWFmMDI0Yzk3Yzc1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0Nzk0NGIwODVlZDAxODg4MjJhMThmNTdiNTgzM2YwODgyOTE2NmU3NWNkZWYyOTcxNjlhNmM0MGEyMWVmNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhNzZhNDliNmM5Yjc0MjdhODNjNzNhY2M2NTJkZjAwNzU4MWRhMjY1M2YwNjk1ZTMxYmRmOGM4YmM2M2NiYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b82989ff760d4378be2ec9c3af7a83cb",
+      "statement": "Read-only mode is enforced both at the MCP surface, where `edit` is omitted, and at the VFS mutation boundary, where writes and other mutations fail with `EROFS`; shell reads and the `run` tool remain available.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L90-L107",
+          "version": "repo-lines-v1:sha256:67fb49f7d7def162b380dbd2ffc7bd950ca216eaf2f2220837eba713b735909f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlOWYxYjY3ZGE0ODc5OWQwNjg0NzJiZWViZmEwODIxODdlYjgyYTk3YjhkNmY1YWM0MGM0ZGU1NGY5NjRhNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4ZDc5YTRlZTE1YTFlMzZjNjY3YmM1YjQxMTIxZDY0NmRhNDJlYTliZTkyYzk4ZTE3MzZlNjY2ZjAyMWQzNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NmFhYWU1OWNhYTRjMmZjMmNlZmZiNjYwMTdhNjBkYThlMDdjNDQzM2VhNjk4Yjc5ZmY0ZTJlOTcxZmQ0ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmZTJlNGIyMWY2YTdmODEzNmJlM2RmODRkZjk1ZTliNzFlYTZlMTVmZTMzNzhhNDljOWM0YTE1MjE2OTdiM2QifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L240-L249",
+          "version": "repo-lines-v1:sha256:d576e4554b1959b243ecba6eee0cb0c4128347454338e456a8a2774a0bc610e7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNmFmNDNlZTY1YzIzMzllMzM4YzJmOTYxNGFmNmVkY2QyOTBiYmY2ZjM0MjY4ZjUwODg3MTFmZGM2MmQ2NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YmViNWU0ZTg2NmM0YmU4OTcxYWUwYjJkN2Q4YzMxODZlYTQ3OGUwMTZiYWI1NTE5MTM3NDYxODVjM2JiODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkNzM2MmRkMzhjYTdiMTU2ODJhMGY5Y2I1MzBkNDgxYjNhYzI0ODFlMzdlMTIwY2JmZDJkZDkwNzI5NGMwNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0ZjYyY2IyNjEzMDllNjIxODVjNGFhZWJjNTc5ODY3NmM3NzYxYTc0MzRlZDYzMzMyMjQzNjczMjRmNDlhMWUifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L270-L327",
+          "version": "repo-lines-v1:sha256:9c03e8a78e83bc0214eb0d399b27ad31805efc801bad77bc5212e72dccbb44bb:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5ZDBjMWM3MTA1MGU0YTYxYmUwNTgxYzQ2YzczZmI0NzFlZWVkZjVmM2M1NDZjNDQzYTNjM2QzMDJjZDY2MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZWQ5NWE1ZTQzYzhlZDI2Y2E2ZDIwNDI4OGQzN2RlNTU5ZTZhMDc3ZjliNGU4OTVmOGU0NjUwMWQ4NmExNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5OGY1NzVmNjM0OTVjNDljODU1MTg3YTI3ZjM3OWQyMGRjNGFlNWJkZjIxY2FiMjY2OTY1M2UxODFhOTFhMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiMjRmOTkxYTAyYTQyNmEzYjI0ODRmNGY5MGY5ODczNjEwNGEzNjZlNzBjYjlmM2NiMTQ2NGFjMzNlNjAxODEifQ"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L50-L58",
+          "version": "repo-lines-v1:sha256:24b3027e4ac621503f99a873d233a3a7d38d42eb3731b29ca75c0f9f0334682e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjVhYjc5ODZiM2NhMzk2NWZlODljN2RlZDg3NDJiYTA4M2ZlZGZiNmQ5Y2VjMmUzMDdiZWQ2ZDY4YWQ4ZjNkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzgxYWUyMDk5ZWFlZGY2MDc1MTQxNTQ1NzY2Nzg1YjYwYjE2YjQzM2Q2YTRlYzE5ZTZiMmU5MGNmOTRlNjllMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTE4MGI2M2M1NWZhMjlkM2ZmZDdjNDI4ZjdjNjJiNWU2MzkxYTBiZDc1YjY3OWIzZTExOTQxMjVkZDRjNDk1YSJ9"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L205-L218",
+          "version": "repo-lines-v1:sha256:ede6fd3a365d926036e0bfe3975b242de2e5d16ceecd890772644d2bbd4cb38e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmMzQ1ODNhNTk4NzY3YmY1NmFlZmViNjVlMjAzM2ExNjUxY2M0YzhkN2U2ZjBhZjNlNWNmZDMyOTNmOTMzYjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3ZGI4MTcwY2RhMGM1ZjY3MzA3Y2M2MDFkMmI0MzI4YzdlMDIwMGZmZDc1NWM0ODFjYzY5Zjk4YzFmYmY5NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiYmIyNjk3YTM2ODMwZGQ5ZTM1ZmRlMWE3NTJkMGJiNjg2ZjRkMGI2NzkyZDI1NWYwNTc0ZmZkZWZhZmEzZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMzRkMjY0OTBhZjI4NGNlZWM3YWRmODRkOTFjMWQ3MGU0NmJmOGNhYzcxOTkxMTU3MTk3N2IwMWQyZDIwZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e55bd91c70c46f494783e98876f937d",
+      "statement": "VFS is the fsspec storage boundary: `VFS.from_url` uses `url_to_fs`, validates a directory root, applies a default 10 MiB per-file read ceiling, normalizes selected backend edge cases, and translates backend failures so exposed errors contain virtual rather than real paths.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/vfs.py#L138-L151",
+          "version": "repo-lines-v1:sha256:25222c45395fc244a31109e1f396b1802a0f966b9bc2fc80e740b3695090745c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlNmZiMWUzYzRiYWEyZmI2NTllZmE4NDU2NDIzYzczOTY4ZDY1YWVjZmNmODQwZDA0Y2M1Mjk4Zjk5YmRiNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiYjU2ZDlkZjQ1M2FkZmIwNDQzYzYzODM4NDA3YmUyNGY5ZmY0MDlhMDc3YWUwOWFjYjE0NWM5MzVkZDI4MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiNzNlY2RkYzEzZGQ0NzU1ZmQ1MTY2ODBmMmQ2MzU0OGU2Y2FiZjBmN2YyMTE2MjBkOWIyMjhmYmU3YjlhYjMifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L230-L249",
+          "version": "repo-lines-v1:sha256:cdc651b7e8712c42f1da08234a2ad30502f318f595dc6f2277f315b88d3f2693:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiYmFlYWRjNDZkODdjYzU4ZGY4M2FmNGI0M2FhMDYzY2ZhNDQwODE5MGUyOWIxMjg5ZTA3MWU5YmRlZWYyYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YmViNWU0ZTg2NmM0YmU4OTcxYWUwYjJkN2Q4YzMxODZlYTQ3OGUwMTZiYWI1NTE5MTM3NDYxODVjM2JiODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzMmVhNzg0ZWEwZmVhY2NkYmY2NzQ3MjdkNWI3MWJiZTJmOGFkOGEwMGExZmFiMzQ2NjI5MDU2Y2ZmMzg5NjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0ZjYyY2IyNjEzMDllNjIxODVjNGFhZWJjNTc5ODY3NmM3NzYxYTc0MzRlZDYzMzMyMjQzNjczMjRmNDlhMWUifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L31-L36",
+          "version": "repo-lines-v1:sha256:aa4e8dc22340f33e667956f01134bfd11331b1e1e4aae68f1f8e0ccf19489ce7:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODdjMmQxZDM1ZDVmNWU2OTc0ZWJjMzVlZmQ1YTY4N2VmMzZlZTA5NWFlNzc0MGVmNzBlZDBjMmJhOGQ1Y2MyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhiN2Q3ZjZiYzYxMTA3Y2QyOTNjZTVhYjI1ZWQ5ODlkNWFhZGRjODhhNjc4MWM0MTZhYjMwNmU0ZDdhMzFhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDgxZjM5MGUwNmI4YWQwNzQ3MjIyNjUzODMxNmMzMTE2NTA4YzFkZGQ1M2IwMTc3YTBiNWMwZGUyMmU1ODVhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQ5OTEwZDA4YTI4MjFhMzhkMDc0MWU5MTg1NTNmYTAyYjI1ZDZhNWI3MzI5OGY2MjZlNWYzNmYzOTAwMmVmNSJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L66-L92",
+          "version": "repo-lines-v1:sha256:df195c9baa5a8f89cab4ea3823f596c7edb89d6bed05da19ee9dd4c3d967735e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmNjQzMTI1YWZjOGQyNDhhMTFjZDcyODcwNThmYTgxZDQwN2I2MWM1NDNiN2IwYzJhNDQ5YzhjZWY5MTU1YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MjMzYjU0YzZlNDdmODhkNjhhYjIwZmY3YTAzOWI4ZTVlMTgxODMzMjU5MjdmNDdmMmQyZWIxYzNjNzMwNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmODNkNjMwYjRlOTQ2ODdhZWNjYTdhZmQ1YTM2NDVkOTkxOGRkYTJhYjlmMmJlZTAyZTFhYzAyNDg4Y2VhZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1ZGEzMWMyNDk5MTQyYWFkZDYyYTU2OGY5NDRmY2FjZTVjZDczMTBjMzA1NzUxN2NmMjhlOGMzYTk4MmJjZDgifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L221-L234",
+          "version": "repo-lines-v1:sha256:f0019b877f3c6774befa1f7cc6e2a474c5cb82e9945d158861a0196642e1824c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYzAwYzY3MTRiOTM1MDBmOGExN2NmY2QzOTcyYjVmMzY4ODRmMzY4MTgyMmZiNjNhOWM4M2Q2NGRhYzAzNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMGVmMTU1ODMzNWFmYjc4NzY5NmI5YmJhMjc2ODg1YTI2YWJmYWQ3NzcyNzZhOGQ5MjljMDk3ZmJiZGQ3YzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzYTAwNDhmOTA5NjZlZmQyM2U5MTM1MGY5MmRiZDc0YjExOWY0Y2U4ODc3OTU2NmY0MDI4NDYwOTI4YTM3NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5MzQzMDc0OWVjYzEzZjMxMjAwYTUzNjBlZjE4ZGEzODZmNTEzN2M3YWZhY2MzNzA3N2ZiYzI1MTk0YzNiYjMifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L278-L292",
+          "version": "repo-lines-v1:sha256:5dc2708973e26d1ea1b9ac3df8cbb364a20835d0278dec5db8d28104e7c1852f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwNWRhY2NiZGY3YmI3NGE3Yjc4ZmJjNjY2NGYxOTgxZmNlMGIwNWI1OTIyODI3Y2QxNzFlYWZiYjQwNjc3MTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YTQzODQ4ZWUzNDZjZjhiMjc1OGRiNzgwMDBjMjhlZDYxYzNjMDZlODQ3NTJkMmFlMmRiODFhYjY2ZmUyMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhODJlYmU5ZWQ0MDdjM2E2YmE0YjAwMzQyOTJiYWE1MmMxMWNlNWFlMjg2MTA3NDAyZGU0NzkyZWVlY2FjZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_vfs.py#L76-L94",
+          "version": "repo-lines-v1:sha256:bd0abed7445be3ffe171ac18efa93518518589962a8732022e683438c814621f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ODU4YmY1ZGJkMWZiNDQ2YjA0ODdhNWYxZjIzYmI5MzE0OWY3ODhkOGI3YTVjM2YwMGVjMDkyNjVlM2Y0YTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MjBhN2Q1NGM2ZTg0NzZjOTdkMzk1NjQzOWZkNDc0M2ZlMDZkNDQ1NzgwMGJkMjEwOGUxNWJlZWVkZjRmNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1NDAyNmVkZTYwMDg2NzkwODg3NDQ3ODFmMmJmYmVkOGFhMzA4NjQ4ZTRkMGE2ZjYwNWMzYjQ3YWUyODI1OGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMGJlYmJjNWY5YjQwZTM4MjQ3MTdkYzQ4MDQ2NjQ2MDQ1MWM3YzVmMjU4OTgyNzc5M2IyMmYxYjJkYTMzYTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9cafe5c17c8440cf9f1738f3ea1d6c9c",
+      "statement": "In stdio mode process stdout is reserved for the MCP protocol, so the CLI disables FastMCP's banner and shell diagnostics are captured into tool result streams instead of being printed by execution code.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/__init__.py#L37-L43",
+          "version": "repo-lines-v1:sha256:52cd219779ac9d7d2c1578f9d19659074a4b1445cd024810493c2d6e7aaa4904:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMxYjZiMDAzODM0NmQxMDkxNzI2Yzg2OWNhM2YwZjFhZGNiZmExMTAyYWM2OWI5NTAyZjA5ZDZmZDViNWIzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDMwOTQ5MDIyNzU2ZDIyYjJjMjI0YmQ4ZTA3NDgzNWYyNjJkZGJlYTRlYzIzNjFlYjYwZGVlYmU1NmRhNzkxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDk4NDRlNDU2MjJmOTgwNzQ2MDBkZTU2YTczNTEzMmFlMjY4NzQ2Njc1ZmVkZjJlMzkwMGU3OGQyZWI1YzA5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/context.py#L43-L59",
+          "version": "repo-lines-v1:sha256:46c371cd69eb1fbb962c6ee76867ad59e718ec94be1992340ce9a26743f444b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjZDdmMmU2MmM0ODhiYzVjZDU0YzM4ZWMwNjVmMDgwMDdkZmNhMWZkMjljZjE0MzgwMTIyMDliOGRjNTJjMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ZThhNWEzNWFkOWJjMTBjOTdmZjFjZDRiNGE3N2FjNWQ5ODdlMWU4MGUwOWU3NzQxZTM3NWE1Njg2NzdjNDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkODdjYWZkMDM3YmIxMWRhOGYwMjdhYTllNWE4NDI4MTU2MzkwNTAwOWNiM2Q1MDIzNWZiZDZmNjJhNWQwMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlZWZlNzM4ZDkxMTZlOGM1NjJjNDhmY2I4NWE5MmVlZjUxMWEwYjc1N2JiZTMwODY3MzJlY2U3ODEzOGRiMDAifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L76-L93",
+          "version": "repo-lines-v1:sha256:c2b82af67b5b0f293dee6470a1c0709f7c1bc23253050d8c4cbd2772b8259887:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxZmZjYWQyYWJhOTU4ZTgxYjcwNTc5ZjU3NzNhNmZjMjU1MWVhYzIxODVjNWJmMGVkNGNiOWNjYzRlYWVkYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2MDM2ODg1NDFhMjFjMjVhNzhjYjc1OTU2MTdjNDhiN2E0OGY3YzMxMWFiMDVkYjRkYzk3MjkzNzVmYzJlZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZmI2ZjE0M2UzYzY1NzA3ZjUwMjg1N2Q0MTJiMjZiMDcxOGYzYjUxZjdlZThmZTQ4ZWJjYjM4NzgzOGUxYWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6103d7673ad544f3a04a96bc9f1f2ee8",
+      "statement": "The MCP integration tests exercise the actual FastMCP client path and verify tool listing, read-only omission, text-only results, normal-result command failures, persistent and serialized state, truncation, edit success/error behavior, cwd-relative editing, and jail enforcement.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_server.py#L1-L5",
+          "version": "repo-lines-v1:sha256:8147034705d3e9c274d2c824bec75afad64a2a1ae17313ecdc38593f2e7d14a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODdmNTg1YWI1YzY5YzA5N2NjY2NiNTU5NmU1YWE0NjA4YTNiNGY1NDhiMDkxOTQyOTgyOWU3MTUzZmY2MjJkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTMwM2VjZGQ0YTRkMTBmMTljNzNmZDQyZmQxMjQzN2ZkMzM1NGE4MjY4MTYwNWRhNTI1NWE5N2EzOTA2OGRiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDBjYjAzYWQwMzA2YmMwODJhMmYwYTZlYjE3NmUzNjc1YTY3OWZmN2ZlNGQwMWNkN2MxNTJlNDUzYTBmYzc1ZCJ9"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L39-L93",
+          "version": "repo-lines-v1:sha256:eaef08b2a4b7f539f80deeb65c7e13f1653e85747ae570ce2d1f3045949a43ce:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0NWZhYzUyMDE1NmQxMzAwZDU0OTM3YzAzYzZiNzM3MDlkNWQwZDVhOTgyNTJkMzMxZDUzODkxY2M1MTE3MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZDkwMjEzYTBlZmIzMzI3MWYzODQ5ODJiZjcwZGJhZGRiNDE4NDg5ZDIzNjNhZGY5Yjc3MDk2YzlhY2MzM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0YWI2MmE2NWFjYzAyNmY2NzFjNTUyZTdhODYzM2M3YjZmYTgyMGFhYTFjN2ZmYWQzNjIzNjFiZTA4NzMwZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkifQ"
+        },
+        {
+          "resource": "repo://tests/test_server.py#L97-L181",
+          "version": "repo-lines-v1:sha256:53afef561d6c7d79fe673b683ec78a3d35030384b25ee99ddb29b040b1d40afd:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlNmRkMDdkYTFmN2U0Njk4ZjYzYjZhOGI3ZDZmNGQ0NmVjNGJlMjZkZDZjMjc3ZGNmNjIyOGZiNGIzNDQ5YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwNjAwNzcxMjM0OTJjMjQ0OWFjMTUxNjc4ZTk5ZjU3NzlhMmRjYWIzOGNlMGExN2M2MmJlOTQ3ZGMzYWJkOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-28T15:38:38.058Z"
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d1591503c9b895863c9e4fe132c5e11fc4365270c3842bca3cd31d7f703656a9",
+  "claims": [
+    {
+      "id": "claim_00868299e0dd4b75af7eb3acfc941c62",
+      "statement": "Shell commands are registered in-process Python callables from `CommandContext` to an integer status; the executor dispatches only names in the builtin registry, returns 127 for unknown names, and has no host-process or PATH fallback.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/_registry.py#L3-L20",
+          "version": "repo-lines-v1:sha256:d59e63037f7e8cb5db9a2283fa105188280eab546710eca3ea42fa344c84dfd9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwZTgzZDBiNTQ0MzVmMjBkYzJjMjdmNjRhYmZhYjU4MjE5OTVmZWJhYzhiOTk2YTkyYTA0Zjg2NTY3YWFjZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYzM1MTU5ZTE5OWNkMWExZWFiNDZkY2IwNTQ2MzMyNDJjZDZiZjBjOTdmNzM5ZjU5YmRhZTgyN2NjMWQxOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhYTc5Yzg4MmFmNDJhMmYwNWM0ODI3MzU4ZGI1OTQxMGI2YjNjZmQ4N2U4ZmU1ZDFiNjgxN2QzNjY2MTRhMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkMGI0YjVhNjM0OGZlMzUzZjQyYmVjYWEzZmU2NzMzZmJhODYzNDg2MWYxOTRmNDcyNTQ0YzczMzZmNmZiZmEifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L144-L169",
+          "version": "repo-lines-v1:sha256:780922ecfa3e60d172bf4a0e07942472b66c69081a0489ff995dedc65189bae9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MWEzNjYxNjRhYjJiMjc0YjA5Y2EyYmY3NDA4ZDRhNmFkM2RkYWQ1ODRkZWFiMjRjZmExOWFmYWMwYTkxZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0OGIzOThjMjNhN2I0OGM5OGQxMGFjMGMwMGYzNTNmYjY2Y2IyMTgwNWFhMWQxNDlmMTNiODU4NDMzYmExMTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyMGFiYmVhNjlhZTc4ZGYxN2Y3N2ZiODFiNWY0NGQ0NGIwMTcwNmM1OGU1YmI2M2Y4ZmYwOGRlYmVkZjMyYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2ZWYxYmRmZGI0ZDllZTc0YmU0YTRhMTM3NTFiNzA4OTFkOTE2ZjMzYjNkYjMzNzlmNThhZDUwY2U1OTc3ZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1cd1c63528dc432386f0ae287108c1e1",
+      "statement": "Importing the builtins package loads the command modules for decorator registration side effects, and the server derives its advertised command list from the resulting `BUILTINS` registry.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/server.py#L27-L53",
+          "version": "repo-lines-v1:sha256:ceb03d180329af2752852109c3f41013f5f383c3763962875f4d957ae09de094:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNTc0YmM0YmY5OWUyY2I0OTMzMmUyNGViOTIyYmRiMjcxN2NmMGU3NzcxMmQ2ZmY4YzQ0ZTEyMGU2M2IxMTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MGEzMTIyMTJkNWVmYjFkNWU4YjQ1ODYxMDgxODgzNWQ3NzEzNDlkNjM0OWFjMDAwNTUzZmY4ZTliNmI1MDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3YTcwZjRjMGY3NDRhMDRkODEyMTk2MzRkYmRiZTE3OWViMjNmMjZhMWE2YWE2YWRlZjJhMTM5NGM0ZjVlNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2ODkyNmZiNGM2ZmY5MWJiMmMxNWQyZTM0Y2EzODk0MDczNDBkZmMxYmI0NmJhOTkyMTUzMzdmYmQ2MGRlMjMifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/__init__.py#L12-L23",
+          "version": "repo-lines-v1:sha256:f82c8d31dabfd2c4528d161164776b7758cbc92fe16c880865148be8885d17ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxZDlkZjYxYTY1YWNhMzc2NmExODkxZDcwZWY3YWU1NGYxMjk1ZjE5N2M3YmU1YTU4ODQ1YzM2MjAzMzVkYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2ZDU5NjFmMDFjODNlYTg3MzU4M2ZmOWJkNWY3ZGM1NTNhZjhiYzU4NGY3NTExNmEyZGVkYWUyZWU0MDUxZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NDViMzcyODBhMGIzMzFlMTU4N2JkZWYzMjVmYzYzYzQxZjg2MGNjZTE5NTQwOGM4ZDkwOWI3N2ZjNmM2NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7dd96875e76e44fd84ea5ede79dc3c87",
+      "statement": "`CommandContext` gives builtins their argv, streams, persistent session, command-local environment view, VFS path resolution, standard diagnostics, and a callback that re-enters builtin dispatch for nested commands.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/context.py#L120-L157",
+          "version": "repo-lines-v1:sha256:260ff06862553bbb449c46e3cbd5a89a289c2477b2d9cdf3e2d0218c6a78ffa7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjN2U5YzgwYTRhZTYwMDAzOTU2MjY4ZTQxZDBkNTI2NzkwNDhmZjgxYmNhY2UxMjU5NmI5NzAxMzQzMWZjNDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3Nzc0ODU1MTkyNzgxNDA4YTU3MTE3YmViZWNmNTIwZWJkN2M1NGViMjNiMTMzYWQ1NjhjMTVmNTFkNWU5ODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhNmQwNzk5NGFmMWEyNzk4ZDJlN2Q1NWJhYjFiZWUxNWQ0MTllMzk0ODFhYjQ1MmRhMzEwMTAxMDcxNGJhNjEifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/context.py#L84-L118",
+          "version": "repo-lines-v1:sha256:a167455097f4d1408b33fd6bdd549b44e848816b0dd303b2555d5c8aa65adda5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMjhkMDUyMDAzNjQ2ZjU0YTBmZTMxZmM4NDcyZTg0YTgzYWFhMDZhYzBmNDVkNjBjMTA0ZGIwMTQzYjc0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4MDU2Zjc0NjhkYmQ1MDQzYjgyZWE5ZDJkYjBhYTM5ODMzYTk0YmE2MWQ4NmY1ZWFmZDAwNWFmOGFlMjBjYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4OTdiNmEyNDlmNzM2ZmU5NGUyOWU1Y2MxNDBjOTNhNDM0Zjg3MTc1OTY4NzdiMWFmOTA1YTQxYjYxM2M2YjIifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L159-L165",
+          "version": "repo-lines-v1:sha256:5ec1c325f9926e9900ff6e3b26ac24aad5e9d533aa1deb7ac3565f02e31a965a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQyM2RhMWFmNWMxMzMwNDM4ZTc3Y2ViZWNmZjJlODdiMGI1YTAwZjcxOTk5MzYzNDhlMzJlOTNiNmM3ZDA2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDYyYWFmYzFkM2U1NTI1NjkyOTIyMmFkNTQ2M2U4OWZhMTBkYjUyMTA2OGIzNWY0ZDJhZjEwNDc0ZDFjOTM4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjM1NjJiMjMzZDdkNWRlYTM3OTlhZDkyNzA3NTQ2MDY1MjdjNDkwNDQ3ZGNmNjc5Yzg2NTJjMWIyNzhlNTIzNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d118b0050da443fdaf64343691c78a70",
+      "statement": "Pipeline and redirection plumbing is executor-owned: pipeline stages exchange buffered `Input` and `Output` streams, while redirected output is closed into the VFS, so builtins write only to context streams without knowing their destination.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/context.py#L43-L80",
+          "version": "repo-lines-v1:sha256:7cd073236449f33adfba98f5f7814905c854df01e21a469a75d15a983e951257:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjZDdmMmU2MmM0ODhiYzVjZDU0YzM4ZWMwNjVmMDgwMDdkZmNhMWZkMjljZjE0MzgwMTIyMDliOGRjNTJjMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExZmVkN2Q3MGU1MjQ2YjNiODk3ZGRhYjhmMzIyZWQzODc5ZmIzY2RhNzA1MzRlYTk4ZjBiYzFjMTI4NmJmOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkODdjYWZkMDM3YmIxMWRhOGYwMjdhYTllNWE4NDI4MTU2MzkwNTAwOWNiM2Q1MDIzNWZiZDZmNjJhNWQwMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4MDU2Zjc0NjhkYmQ1MDQzYjgyZWE5ZDJkYjBhYTM5ODMzYTk0YmE2MWQ4NmY1ZWFmZDAwNWFmOGFlMjBjYjUifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L184-L240",
+          "version": "repo-lines-v1:sha256:cafb9551f25631903a6e887851d7336d8e6050ea16af170114d454d430da90e5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2NzA5OTQ2OTA1YzU4OWQ0MTQyZjNiODAwMDQ0MzU4NTU1YzgzZWFiN2Q5MTVkMDAzNDhhOWYxODI0YTM2ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwZjdkMjU3YjE3NmMxZjg2OTMxNjg3ODZjY2E1MzNlMmFiYWJkM2MzY2NiMjgzYWE3MzI5OWI4OWQ2MDkxMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4YjU4MzgxNGViZThmNmNmNDk0MTA4ODQxZDNkNzZlMDcyOGU2MzczMzdiMmU0ZmZhYjJkYjBlYThjYzA2YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkYzc3Y2M1MDU4YzEzZjJkNWRjYjk2ZTI3ZDE2ZjU0YWNhNzg3MzNiYWYxM2NmMmNkMTMwZTA4NTBhMjE2ZjQifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L242-L265",
+          "version": "repo-lines-v1:sha256:c311cfd939f648c4dc51327fc9b8c22df362164ecfffab821decf53494657fc3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxYmM5YTJlMGVjMWMwZDc1NGEzZDdjYWM2NjZhYzBiYTVhNmFiNTNiN2ExNTFmMjIzYmM5ZjdmMjg5Nzg1N2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNzZiZDM3ZGYyNTFiNjA0YzI2Y2YwZjA3ZGJmOTE4NTg0ZjhlNzFjMTU5NDQ1M2UxNDllNmZhZWY4MzIyZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwZDI5MGI1ZmQzNDFiMjU1ZDllNTIyODA5MDI0NjBjMjA2MmM3ZTk0MjU1ZjY3YWQwN2EzNTg5MzIwMjE2MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3YmYxMTgyMDdkMTZhNzg5ZGYzNWNhZTViODNiNGE5NGEzMzNlOWVlYzBjNDY4YWJmMGIyMWViYjJhMjY5ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e8a7b2354844945b7efc757f2d80dad",
+      "statement": "The executor treats `BuiltinExit` as an intentional status return and contains every other exception escaping a builtin by printing an internal-error diagnostic and returning status 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/context.py#L160-L165",
+          "version": "repo-lines-v1:sha256:6623ebc515e1ebd471d05caa89b788ee67b342ad7f2e2953b47f77471f1a1655:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MyZjAwMGI5ZWU5YzIzMTAyZTFlYzlmZWJhOWUwODc5ZTI2ZmVkYjE0Yzk3OTUyMGM1NjhlNjEwNjBlNzI3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdjMzE2YWI2Yzg4NWI1NTgwNWIwYWI3NGFmMGI2YzMxNjMyYjFiZTcyMzVlZDdjMDNhMGE0NTAzYjRhMzUxYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjZlNjg4MDdmOWE4OWFmM2NiZmM3MWI0ZmMxNGI4NmIyZTFkNjVlNjg2MWFhMDY3YjFiOGQzNjAzNDNhYTk1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/executor.py#L166-L172",
+          "version": "repo-lines-v1:sha256:d2f00a80910199842e7f9bcabb563a33cec2750d42bb75b8233193e5ea992f86:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU2OWNiMDkyODBlZTA3ODE5NDVlNDhkNDA0MWJkMmRmYWFlNjkxYWQyZWFiZjVkM2NiYTA4NDZjNzIxNmNhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U3NTk2MmNmODdkYmJiMzU2Mzk0YTcxNzMzOTFkMzU4MDFjZTk0NzZhYjIzZThkOTMwZDkyODZjMDZlOGFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzdiY2MxOTk5NjZiN2U0MTY4NDdkYWQzOWMwMGM1ZTQzZjk0ZjZiMjg1OTlhMjJkYzMyNmFhNjIxZDBjODEyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDUyM2I5M2MxMTVmZjNiZDkyNzliOWQxYWZmZmUwODdkMjEyMGJkMTVjZjc0N2NiZDFhMzJhYmRjOTc2NGI1ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0fd2e1920194d60b317f039d5cf0d85",
+      "statement": "The shared option parser supports default operand permutation, bundled short options and attached values, `--name=value`, `--`, unique non-empty long-option abbreviations, repeatable values, and a non-permuting mode; parser help raises `BuiltinExit(0)`, while malformed options produce supported-option diagnostics and return `None`.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/_options.py#L125-L144",
+          "version": "repo-lines-v1:sha256:a931a39daddc968a48de09ffc0cd24ac7486613cdb4e8299258244e3f07cd164:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3NDdiN2M1ZWE4NGIyNmFlNThmYTU5MzE5Y2U5YzEyYzY4YTAyOGVjNzQyMDZhZGZlYWUxNjU0ZDBjNDQ5ODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5MjJkOTIxNmMwZDNmZjE2ZjA1MzU3NjUyYmI5MjlmODFiNDFjYTlhOWM0ZjA2MGEyMjQzY2FkMjNkODhiYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5OGQzM2EyZWY5OGY5M2NlZWQzOTU2YTYxMTE0NmVlZDkyMzE5MmNiZTVlNWFmZTJjYmZmNzg1MjM0OTM3NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/_options.py#L24-L73",
+          "version": "repo-lines-v1:sha256:f8fab131cf7399c461b419acb5ab24045bd2c27f57eba03df6f047066c0f5de3:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2OWExMzk3NWMyNTZlYzgzMjBlMjAxNjA4M2M5NmRmNjM3Y2EzZDM1YmViZGUyMzE0YmVlM2E0NzExYjU2Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMTQ5ZTg2YTc1Mjg3Yjc2ZmMyNDcxOGQyNzlhOWUzNzdiMjUxOWVlNTA5N2FlZGVlYzc5ZGU1MDg1M2JhNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwMmViNDUxY2ZjYWM1ODQzZjY4MWQ5ZDU5YTZlMjdiNDg5MDhmNDNmMzg0ODg3ZTY2OTUyM2IyZGJmYjJlODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMGY5M2VkNzE0MTA5N2ZjMzU0MjQzNDgyNjM4ODJlZTBlNWE1MTZmMjFhM2MyNTIzYjdhMGExNGJiMWY1ZTgifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/_options.py#L75-L122",
+          "version": "repo-lines-v1:sha256:ded89d1a1f88d1853f35dbe185436f907a85082d35ca63147d3ff978039a5496:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYTVjNjZlMTdiMTQ1Mzk3ODM0YjhjODU0ZGM0MTkzZTIxMjUxODBhODk5NmExNGMzMTg4MzMyNmIyZWZiY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyYzE5MjA2MjNmYzI1MDQxN2ZkNmI3YjY4MGYyNDBkMzE3YjFmM2M4NzhlYjlmM2JhYWQzN2VlMmYxYjI5MzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3MDZkNWRjODdlNjdkZGE4OGIxOThlYWQyMzM1ZGYzZDhjYWMzY2ZlMzRiNWU1MzAxNGI1Y2I2OTEwN2FjNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0OTgyMmI0YWRiMGRhMjcxOTkyYWVmZTBhNDg3MjI5ZDJmNmZjZTdlNjA1MTcyMmU3MDE5ZGUzN2I4ZmJjNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf1c5bf2077245e98e7c65dad3cb6b17",
+      "statement": "`Inputs` implements the shared file-or-stdin convention through context streams and VFS reads while aggregating read failures, and `lines` preserves newline bytes while recognizing only LF as a line terminator.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/_registry.py#L23-L65",
+          "version": "repo-lines-v1:sha256:7109122d55b51cd08adabba94e96e57566ab94913c003a308821d463667dfe72:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMTk5Yzk1ODRhOTZmZDVmMTMxMTAyNGUyY2NiMDc4MjUwYmNhYmY4YTk4M2RiMmU2MDQxMjg3MmZlMDhiMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkMzUyNzFlNjUyOGQ5MDJmMjk4ZmYxNzcyNGQ2MGYwZTEwMDljNWJlZTE5NDMwMzBiNWNmMjhmOTQ1ODhlZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNGJiOGIyNTg5MjY1MDAzZjVmYWRhMDM2ODI2MzMzZDFiZWI4MGEzODYxYTlhZmZlOTFlMjUxYjNiNjgwOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_53e741cf6a454b1ebacbbce0dde8308c",
+      "statement": "`grep` explicitly translates POSIX BRE and ERE constructs, POSIX character classes, and word boundaries into Python regex syntax, while fixed-string mode escapes patterns and Perl mode passes patterns directly to Python `re`.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/grep.py#L1-L13",
+          "version": "repo-lines-v1:sha256:8f09c1aabd8553cf43eb36d49a2063a21eabe93db8a7f98f2b2a7164605fb4ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4YzBhZjNhNWRhNDA1MGFjOTQ0MzA2MjcwMDdmZGRiNDA0ZjRiMzY1MDUwYzY4OGRhMWNiNDE0ZWViM2VhOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDNlY2RkNGE0ZDEwZjE5YzczZmQ0MmZkMTI0MzdmZDMzNTRhODI2ODE2MDVkYTUyNTVhOTdhMzkwNjhkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwYzM3NWE5MGZjNzE5YThjZDNiOWZhNDIzOWU0OTVjZjY3ODFhYWFhNWRlMzk3ZjE4NjJiODZkY2Y1NmZmOTUifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/grep.py#L25-L132",
+          "version": "repo-lines-v1:sha256:f548bb5615c5d9d022c5ff18b63047cd50771750ccfa309375a5b6d040ab61e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjNDU5NzFiNGE1ZjE5NGYxNDU0NjE4NjcwODQxZjUyMGMzYzEwNGNhODYyOTcwZDAwNTNlMDViMTZmMzllYjk1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1N2Q0MWE1MTM4ZjBjNzdlNmE1YzgxMjQ3Yzg3MTZhYzI0YmQxZjVmOTkwNTU4ZjEyNmEyNWU0YmRiY2ViZjhjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3ZTVjNDAyZDJhOWJiYTllYWJmZTZhNDc0MzNlYTc0MjgyMWI0OTBiN2Y5Y2YwZTFkMWM3ZTJjNmM4ODcxYmNkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0YTliYjRiMjNlMWNmZTdjMmVmMGYwMmYxNTVjODcyNjg2NGQzZTA1MTU0MmZkMzU3Yzc4ZGY2YTEwYTRjM2FmIn0"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/grep.py#L271-L285",
+          "version": "repo-lines-v1:sha256:2c4bbf9d29399e3a8ae863487c128f843c59e4ff4b3b56cba830e5fdbe7f7651:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5ZjlmZWE5MzRiZWE3NjJlMGIzYzk3NTA2MmY3MTYwZGM4YWUwYzMzYjMwZmY2NTUwYzMzN2I4MmM2M2FjMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzOGQ4Yzc5ZWZiZmU5M2IxM2MxZDc4N2Y5YWQ0M2Q0Y2RhYTRmNWYyNDQ4MWE3OWQyMmM5MDE4MTRhYTY5MjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjODI4YWU0OTBiMWU0YTlmZTZjNDI1NjQyNDQwNTI5NTY4ZWYwMWE2NjcyNzFkOWMwZmUwM2FlMDY3OWE1ZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4M2YwMzRkYjI0NzE5OTVmOWRjMTY4NzY0YTRjOTg5MGZlYzIzNjQ4N2FiYTdhMGZhMWJjYjg5OTY5ZTRkNjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70fb30d0effc4bf0b47a48381b527832",
+      "statement": "Recursive `grep` applies include and exclude patterns to file basenames and exclude-directory patterns before descent, using VFS traversal and preserving distinct display behavior for implicit versus explicit roots.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/grep.py#L212-L263",
+          "version": "repo-lines-v1:sha256:4ee9e65c51a439333408b36a09740cb298722158e9f339b6803ba85a6996a5da:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzMjhmYWM3ZjU2ZWFjYjYzYTRmYTk2NDkyYmJkZGEyMmM3MTRkMjY1ODExNDA0ZTEwOTIzY2U4ZDY4ZGNlNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4ZDJmYjY5MDNmMjVhOTFlMDBmN2QxMGUzZjEyYjhmMDcyZDc3ZGJlZGQ5NWNmZTQ5NDM5NWZmZDkwZDJkMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzOGZiM2ViYTZhZTM3YmVkODg2OWIxODUwNmVlZGUyYTc1NDAxMGYxYzk1OTZjNjgwOTA4NWRiMDY1MzkzOWEifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/grep.py#L288-L309",
+          "version": "repo-lines-v1:sha256:5a42556f48b701ffe5aa78fcc42039ca7e4a6e82f9aa92359a660dff12b03276:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiMzc1MDEwY2RhMjA5YjUyMjY5YjAwNTkyYTQ2MDhlY2ViOTcwZDE5OTRmODNmNDIyZWJiMGY2MTMwNzhiN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1M2QxZjYwZjVjNGU3OTNlZmNiYzdlZGVkNDBhMzcyYzEwZTZmZDdhNWQ3ZDdkODgxMzNlNmY2ZjcyM2YxZGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyMjNkZmIxMTJhNTU5Y2Q1MGZkM2NmNDdiOGI2ZDFjMWRkZDM5OWZiYmE2NDhlMWJjNGUxODZhZWZiOGIzZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljNWMxOWM0YWYzZTEwNGVjMGU5M2RkMDUyNmY2NTM5OGU5YzQ0YTM3MTViNjI3ZDMzNjgwZDMxNGJmMzY0M2UifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/vfs.py#L182-L208",
+          "version": "repo-lines-v1:sha256:f6c9682e48c505a0fb2fd57a480068584799786e3ce08aa40f4cfdb75f74fa91:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZWJkOWViNmQ1NDQwN2MzZmI2YmYxODc5ZDY1ODVhMzA0OTU4MzQ0MjAwNTZmNzYwNTRkOTYyYTMxMWFlMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxNzc0MWJhMjExOTY2MDZhOTYzYzMwZDJlMGU0YTVkY2ZhMTdjODBmZTBlYjYzY2Q1ZmNhZjM1YzJlY2U5YTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYWUxOWVhYmJlYjBjNTE0ZmVjYzU1MDEwMjA4ZjUyYjQ0YjEzMWYxYzRjMWM1YTJmZmM1ZTJiY2IwMDBmNTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZjRkMmJmMGQ2YWU0OGQ3MmVmOTk0YWNkNDU4YWUxYmE0NDM0MzlkODc3MDk4MGQ1MzhjZWJjNWFiM2QwZjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e41a36008004c10a20d9453e8796bc8",
+      "statement": "`grep` treats NUL-containing input as binary unless text mode is selected, supports skipping binary files, computes selections while suppressing ordinary binary rows, and maps final outcomes to 0 for a selection, 1 for no selection, and 2 for an error, with an explicit quiet match taking precedence over recorded errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/grep.py#L264-L268",
+          "version": "repo-lines-v1:sha256:52992c0533b756583fe1d5dd48f0d1199b9477a28a727dd37af6e2ec0b1b543e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM0YWFiNDA2MGZmZGU4ZWE1NGUyNjFjODkwMGY3MjE0Y2JjMDljNDVkNGI2MzRjZjk4NGQ5ZmJiMzk0YTA1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIzNTQyYjRiYWVhNTg4Y2RmMDgxY2ZhZDQwMThkZjY2OTNiZTcyMWRkNDgyNjFmMjAxZTVhMzdjMjIzOTRmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjc3NWY3MDEzN2VlMjU3YTIwYTRhYmU2OWNiMmRhOTlmZDY0YjYwYTJhM2E2ZWE4ZTE2MjYzNTlmYjU2NWRiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjc3MTVkZmE3YWE5ZTBjYTZiOWQ4YjkxNTYzMTVlY2Q2NmJlOWMwODMyMWE2OGU4ZDQxN2VhNWYyODk3NzIzMiJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/grep.py#L312-L387",
+          "version": "repo-lines-v1:sha256:b350a43ea338104a175189f18050bcecd0dd1baae60aa9d634e72dc64c570ce0:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MWNkMmU4MTBlOTQ4OTJmNDBlZDg5YjAyMGNiYWQyZWViNjUwNjc3ZjAxY2JmYjk3MzcyMzVmZmEyOWFkODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNjc1ZjZmNTIyNTg5MDJkOTVhNWIzNTg4MjhlNDEwMGM0ODNmZjQ3MDJjMDNiNDYxZDkwNmFmMGYxYjU2YWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiMzJjNDg3NzI2NmZjMTljNGI4YzY2MDllMWE0MmM5ZTczYTZlYWRiMWVjNGY3MTc0YmZhYjYyMmM3OWM0NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1ZDA0ZmM0ZWJmZDY1YTI4YjNhMmMxNTU5ZmIyOTFhNDJhOTBjMWU5ZWZkNmJiMjhjNTFlNDM2ZDM5YjNiMTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a57cb52c39740eb837629602349e56e",
+      "statement": "`find` compiles a recursive-descent expression in which NOT binds above implicit or explicit AND, AND binds above OR, and expressions without a configured action receive implicit printing.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L178-L197",
+          "version": "repo-lines-v1:sha256:847f48e4d77b25f646ab9478bb9a044b7b3e9d76397bdd71faa75dbb02afa0bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1ZGRiNTU2MzBlMjdiMzFjNWNkZmVhYzc4NTNiY2YwZTY1ZTA2ZjhkZDYwY2M2YjQ0YjJmZGI3YTBmZTQ4ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkZDk0NGNmODUwM2E2NDAxNzdjZGQ5NjA5MTUzNDFiMDM4YzMxMzBmNTIxODFiOGMyMDUwMGUxYTQ1YWQ5YjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2YzUyMDI2MGE0NzQ3MTdlY2M3ZTAzOWJiOTM2ZjkxZGNjNjg1NDM1MGEyNmUzMGZhODBjNmZhZGUwMGYxOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlNWQ4Y2I2M2NlY2NhZWQ2MjY4ZTRiMzk2ZjM5NGQwOGY5YmJiNjE0NGE0YTJmMDUyNTY1N2NmZWY4MmQ1OWYifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L299-L319",
+          "version": "repo-lines-v1:sha256:1206e4edd51636254f9a924d864e2263ea3f6fdf8a3457d39ba1a564a34cb3e7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0YjNlZWU0YTAyMTAxYjI2OTIzNzZkY2EwZWRiZDdkNzRmNjg1ZWRhOTNlZGY2MWQ5MGY5ZjE0MGNkNjU4ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNTExNjdkZWQ2OWFmYWY4NWU3MWYzM2U2ODI2MDE2ZmIyODA1NmU1OWU1YWI4NTZkM2NhODA4N2Y0NzY2MWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlMjYzYTE1NWMxYTg4MmQ0NDcxNDRiOGFjNDljZGEwOWNiOWNmY2Y5ZWJhODZhMjdhYTI2NzhkZTk4NjI5M2UifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L72-L134",
+          "version": "repo-lines-v1:sha256:35c7330d22629e8e9cfaa163fbe53b3afcd1f8352cc2c180f7ed9f3ebf2589f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMjk3NzU1MTJjNTkyZTUyZmJkZjVlZDMyNzg0ZmViZWVmNGM3Mzg5M2RlNTIyZDc2ZjRlZjNiMzU5MjJjNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1ODNjZDg5NjkxNWI4NTU4ODhiMGZkNzkyNjYxOGFjMzU1OWE2NjhjODE0MzUyZDJhYTExNGQ0MjZiMGE3NjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3ZTVkMjkxMWViNzljY2ZkYTM5NGQzZGI4NTQwOTUzZTg1ZjE1OWE2OWMzMGRjMmUyYTFiMzhkYTNkOWQxMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4OGY3YmEzNWEwYjU3MmUxZGU0OTY4MDQ5MTVlNzE5ODJjOWZiMDA1YzA4NGUwZmFhYmFiN2ZhYzQ3ZTlkODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f09af0fdb78b4bef95397b35f2f3192b",
+      "statement": "`find` normally evaluates a visit before descending so `-prune` can block traversal, but `-delete` forces post-order depth-first evaluation; traversal also honors min/max depth, avoids descending symlinked directories, and processes deferred batches even after `-quit` unwinds traversal.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L182-L194",
+          "version": "repo-lines-v1:sha256:512e317baa8d8d51c2c0633757fe061f6114f72a7e2738270a381255ca579a9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5OGY0MzI0ZmIwZjczZTM1MzgwMzk3YmRiOWJhMTg3MjRiMGUwOTA4NzRhYTYxMGI3YzI0M2U1MjkxNzlkZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxYzg2MDU1NTM5NTdhOTM3OTY2ZjA4NjFhZDFkYjNmNjZmN2E4ZmU0YWY0Y2RmNWY0YjY0ZTZlODkwNjk4ODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0YjY0ZGZjNTBlNTcyOGVmOTdmMjc5OTljZjVjZGYxMGRlOWJiOTE0Zjc3ZmQzZjkwMzY1YWY2NjBiZmRkMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwMTZmOTdjYmQ3OTE5Y2I0Yjc3ODQwMjBmMDc5ODk0NmUyMGQxOWJkOGE0N2ZhNzIyN2E1MWQxMTZiZTA4NjcifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L253-L262",
+          "version": "repo-lines-v1:sha256:3e95a2e24bdf885a6072bdeb9bdf161891e5190883b4049ae9d95ace9e6e6739:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5OWVlYjAwN2RkNDljMDA1ZjY5MzFhMDhiZjcwMDc2ODU4OWM2M2M2NjA0NWNkYTU1OTM5OWQ5NGY4YzFlZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMDQyNGJkZTNhZDkxZmY4ZGFlYTgxYTRhYTUwNGIyZmU5ZDM3OTIzZjU5Mzc5MTUyZDU0M2Q3YjRkZWFmNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5MDEzMThhZTJmMzM3NWMzZDMxZDRiMzY1ODYxMGQ3MWQ2MTUyMjRmNTE2MDQ1OTk1MTA5YTEyODIxZjcxY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjOWNlMzQyYzE0YzIwNjU0MWE2ODUwNWZlNDQyY2Y0ZGNhODZlMTc2NDhmMmFlYzViNzAzMDcyMjg4N2FhNDYifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L320-L354",
+          "version": "repo-lines-v1:sha256:8c10582ec80a9f0a2e3f667fe5f17cbefd93f6258de95182f6935d857c9b8ff2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyZjgyMjMwYjdlNzU0ZDc5YTVjM2JhZTA2ODQ0YzE3MDYzMjE4MGY2ZjNiM2E0Njk2N2QwNTliZGRmNjdkZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExZDA0NmI4YjVlYmYwYzVmM2Q0MTBjZmI3ODBkMWJhOTNlYTkwOWJlYTRkOWRiNjU3MWUxN2UzMWU5OGE5YzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3NTE5ZWE1YzY4Zjc1Yjg0NTY2YmY1MzJjZTdmNzA4YjQ3ZWI2NGJkZmVhMmIzZTU5M2I3YzUxMDI2M2IxZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5MjAyYjdlN2ZkYzQyMzQxYTdmODNkZjQwY2YyMDhmYmQxZjVjYTQ2ZGQwZTE4ODdlMmQ3NzY0MzgzMTE5MDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b416604484f549f6af58aa996ff0bf37",
+      "statement": "`find -exec ... {} ;` invokes a nested registered command per selected visit with placeholder substitution and uses its zero status as expression truth, whereas `-exec ... {} +` collects paths and invokes the nested command after traversal, mapping any nonzero batch result to find status 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L264-L288",
+          "version": "repo-lines-v1:sha256:506839c1e3bbcedebc8bfcca3b30287ee228b5cefd35425545845a4e0d19ce76:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4YTEzNzcyN2VjZTliNGFmYzBiNjM2NzMyMzVmMzZlZmJkMzY5NjQzYjJhMTdlYmQzNTIwOTQwNDE2ZWI3YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5YzBlNTFhMTM1ZTk1OTA3NTgyZmVhM2IwOTY5YzkzZmI1OWE4MGZmZmFlODA0MmFhYTg1YWNhZTI3MDFhMTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmMWU3ZmM3OTJlMTM1Yzg3ODVkMDBhNTIyZDVlNTdiYjQyOGVkOTc5ODA0OWY1NGM2ZGQzNTNjODQ0NzAxMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4MzVkZmVmMjNjZTg4Nzk3OTM1ZWVjMWQxZTc2NTI0NWVhMjk2NTI0YmE0MzY4MjVlNTE2ZjcxZGE0YzU2NWMifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L349-L354",
+          "version": "repo-lines-v1:sha256:ad2aca1ea41322b8b6d2f7e841c16d34aa42c4ea4ffa03d0b55dacbe1a82818b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdiOTMwM2UwYjQ4Mzk2NjdjODBhZjhmNjI0MzAxYzhmMjc3NWY2MjU5YTc0MTBjMzc5ZDA5YzgyMDJhMDY2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFkMDQ2YjhiNWViZjBjNWYzZDQxMGNmYjc4MGQxYmE5M2VhOTA5YmVhNGQ5ZGI2NTcxZTE3ZTMxZTk4YTljMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjZiZmU2Y2M5MDE5ZTMwNmI5ZDVmZDMyYTNkMWNmYWRiMTdkMWRiMTJmMjMzMzc3ZDI2NWI1NTZmNGYzNzQyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTkyMDJiN2U3ZmRjNDIzNDFhN2Y4M2RmNDBjZjIwOGZiZDFmNWNhNDZkZDBlMTg4N2UyZDc3NjQzODMxMTkwMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b254622b30d4a4ca2f2a0d211fdde89",
+      "statement": "`xargs` parses its own options only before the nested command, supports quoted/default, NUL, explicit-delimiter, line, replacement, and grouped input modes, and invokes each batch through `CommandContext.run_command` with empty stdin and shared output streams.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L360-L401",
+          "version": "repo-lines-v1:sha256:c486093208969bea04305404dafb76add6dacc0719891e2b53ceb836d7a42759:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjN2E4ZWM1NmNjNWNmZDg1YjkzNDc4YzJiZDQzNzg3YzUyNmY5YzliZDM4ZGYzY2JlZDY5ODhmZDY3ZTRlZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNDdlNTcxYjQ4ZGRiZGZiNTFlNmUxNjc1MWM2YzE3MDY1MTg2MjU1ZmNlZWE5ZDY0Y2VmYmUzODZkZGExODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhNWJlZDhhODcyMjUzNjQ2N2FkMWE3NDhhZmNkNjZiYjEwMGQ4NjQwYzBkOTJmOGFjZmI3YWI2ODI2ZmU5MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkMzExY2FhMTM1YTUzYzllNTQxZGFhNGM2NDk2YTA2NDYwOTEyMjE0NzRmNTAxNjBhOTMzYWNkZWZmYjJmYTEifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L404-L445",
+          "version": "repo-lines-v1:sha256:be9f4a73526a34dc3ded14a3365f14ada84765bf086a8fa6da8112fd7624d774:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YTU0ZmNjYzhjMDE3OWIwMmM1N2E4ODBjZWZhMTQ1NzM4ZDYzMTI2MGM0ZTRiM2Q2NTFiN2EwOTIxMjgzYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzYzIxNjlmM2E3Y2U4OGY5Y2NmOWFiMzk1YThhOGZmMWZhZmVjZjdlYjFmNGZiMDg5MjFmOGRmMjA2NzY1MTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNGEwMDhlYWYwZjRjMjJlM2IyMTUyYWVkMTYwYzYxY2UyNDc1NjM4NjA4NzE3MjBmODAzNjRkZTYwZWU1ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjYTAyMGQzNGM0N2M4NDgzNzZlYTIzNDIwN2NiYTg3M2Y4N2Y5ZTgxYTgwYTk1YmI4MmUzZjhiODNkNDk3NzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0138c34acc947fca8417eb6c004c893",
+      "statement": "`xargs` maps nested status 127 directly to 127, aborts on 255 with status 124, maps other nonzero results to eventual status 123, and otherwise returns 0.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/find.py#L441-L453",
+          "version": "repo-lines-v1:sha256:b5173cce9a2f646354ef61bdbb0605ea7395083b340c6caaf37bf077ad0fe1f6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyYmQ5OGNhN2ZjNzFmZmJmNDc3M2U2Mjc4ZDI1NmM5NWEyYzMwMGQ2NTY4ZDRhNTYxODIwNWY5ODBjMzQ1MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGU2ZDMxNGZlM2MyNzUzNDQ4M2MzYTcwNDBjZmE3NzU2YmFkMWZlNTgwYTM1ODJlZmNiZTNjOWE2NDY3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkMDk4ZWI4MTUzZGNkNGI1YzEyYmFjNmVkODg3OTUzYjQxMzdmOWQ0M2I5NDM3NmYyM2ZjODhmZGNhNjVjN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15c2c12dcb154f4d8a2f35f6a447170b",
+      "statement": "`sort` performs byte-oriented C-locale-style comparisons and implements GNU-like key extraction, including preceding blanks as part of fields without `-t`, per-key ordering modifiers, ordered multi-key comparison, whole-line tie breaking, stable-mode suppression of that fallback, and key-based uniqueness.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/text.py#L1-L5",
+          "version": "repo-lines-v1:sha256:23044b52080a69fd3a1df8a56c79937fe3419b683461f587600e99f99e1f8cb2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBmMGM2YTIzZjhmYWVlNGMxMmQyZjQ3MDc1NWNmM2FmMzc5Zjk0YmI2MDNlNTJkZDJhMWQ0NzJhMzU2YTJhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTMwM2VjZGQ0YTRkMTBmMTljNzNmZDQyZmQxMjQzN2ZkMzM1NGE4MjY4MTYwNWRhNTI1NWE5N2EzOTA2OGRiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzNhNDFjZGVhNzZmNDA1MDNkODllYjdhYjcyZmJkNTc3YmMzNDU5Zjc3ZWQ4YTFhN2RjZWJmYzE0NTU4YTViZiJ9"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/text.py#L126-L189",
+          "version": "repo-lines-v1:sha256:dfe580d0391bd4e28fb4c4f52d2e1b142b86cd90a03380360879212d7e287513:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0Y2NkNmU3ZGYyZTM4NGFhZWMwOGNiMGQzMzdlMzdlNGZjYWQyYmRjYThmOGFiMDNlN2UxZDVlODdhNTA5YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGU2ZDMxNGZlM2MyNzUzNDQ4M2MzYTcwNDBjZmE3NzU2YmFkMWZlNTgwYTM1ODJlZmNiZTNjOWE2NDY3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiYjBmOTNjMWRlNzQ1ZjNjNDkzYzFmYzQwMTJkYTU5OTU4ZDVkZTg1OTQ5M2I3ZWViOGE5YTY0MDY3ZTE4YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyOTgzNzRhMTNhZWZmNGIwMWExZDhhOWExMzAyYTc4MGI2ZmJiYmM2NTU1MDE1NGMxZDM5NWFmNTY1YTMxYWQifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/text.py#L22-L110",
+          "version": "repo-lines-v1:sha256:23ac11231e5e54747714c1a5a588b5a56d0e2345024bfe31fefc9a07a172edc8:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2YTJhOTA3ZjIxMzljZGIyNWQxNzZlMThiNzRiNDhiOTNhYjQzZmJlOGZmMTdkMmFmMjJkOGJlYmY0ZTQ5OGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3ZTg4Yjc2ZDUyMTBiMzA0N2NkYmU0OWViOGI1NTQwNTMxYzQwODk0M2I5MThjM2I0YmY4ZGE3N2MwOTQ3MTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZGVhMDUzN2Q2ZDVmZjYxZTA3ZDFiOTcyNGViZjQ4OGMzODhiZjNiNmQ3YWZiNGY3OTcxMWFkOGU0YjA3M2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d8d7f38d450a4c3f967441cd64bd3ed0",
+      "statement": "`uniq` groups only adjacent byte rows, optionally folds case, filters repeated or unique groups, and rejects a second path operand because output files must be expressed with shell redirection.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/text.py#L195-L233",
+          "version": "repo-lines-v1:sha256:8cf22c8204d66f1275b82fbdd0b8737ea18f1f60f82dd66b73c3ac8e516e0a66:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5OTk5YmJlMDRhYjljMTkxZTVhN2EwOTYzNWU0OTExYmQ3NTZlZjQ1MmE1NDg2YTAzMGY5N2VkMWZiNjczNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMGU0MjQ2YWIzOGY3MWQ4NGVmMDUyZDdmNGNhYjQ4MzlmOGI1N2JhODExMGYzOWYyMzVmMjBkMmQyODIxZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlNzRkNTdkMjI1MjIzYjI4MjY4ZDlhYzg2MWVmNmY4MDgyZTkwMmQzMTJhNDRhZTVlZjRiYjk2MTczZTdiMTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b79b9b8dfac2447aba0af99c8d5456d6",
+      "statement": "Recursive `cp` snapshots the source VFS walk before creating the destination, preventing self-generated traversal input; when copying beneath the source it performs the snapshot copy and then reports a self-copy error, producing a bounded partial copy and failure status.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/files.py#L380-L435",
+          "version": "repo-lines-v1:sha256:0863f105cae1e8e23cfbb5f35b4d0d38325853a30681c8a52053753745b629e3:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNTczODczYWYxNjM4ZWYzMTY1MDk0NThjOWFjOGE4MTcxZmI2ZmFkMGEzYjExZDkyYmUxOGJmNGM1ZDBiMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGU2ZDMxNGZlM2MyNzUzNDQ4M2MzYTcwNDBjZmE3NzU2YmFkMWZlNTgwYTM1ODJlZmNiZTNjOWE2NDY3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5MzE2MmM4MjA1NTU4ODVmYWJlZWJhNjFiZTUyZTcyNjUzYjNkYmIyM2UyMjZmNjc3ZTE1YTQyODUwN2QwNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViODcyMTQwOWM1NmM2MDEyZTk2ODA4NWQ1NzRjNzM5MDA5NmI3MDkyY2M3YzQwYzU0MzRkM2ZhNTgxNjhkNjMifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/files.py#L438-L453",
+          "version": "repo-lines-v1:sha256:5b590de9494d073136b4506c84e4261fe98fa90ded84f87d12a477dd93a857fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlN2Y0MjZjN2NjMzliYjU5NmRhYmEyYmExNTEzMTBlMGRjZGM2OGI1NzgzY2U0ZjkwNjM2YzAxZDhkNTdkMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYWY5NWYxOGFmY2NlZDRiOGQyMjliZmFjODljZGNiYTYyNzgzNDdhMGNhMGUxYTNiYTAwOWQ3MDQ3MDZlYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5MzE2MmM4MjA1NTU4ODVmYWJlZWJhNjFiZTUyZTcyNjUzYjNkYmIyM2UyMjZmNjc3ZTE1YTQyODUwN2QwNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04f61828a6974917aacc08f04026f094",
+      "statement": "Recursive file operations include explicit safety checks: `rm` refuses recursive virtual-root removal and `.` or `..` directory operands, while `mv` rejects moving a source into its own subtree.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcpath/shell/builtins/files.py#L268-L314",
+          "version": "repo-lines-v1:sha256:5f58f0d47b3bbb2719bae16dd61f97b5051bfee5145573b35b46f0c285baf913:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3OGRiYjU0ZGIyOTAxY2U5ZWExNmI2Y2QzNmQ4ZDI3ZWFlYmNjNDY2ZGVkZTUwNWRmYjFiMDNkZjFlY2VhYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGU2ZDMxNGZlM2MyNzUzNDQ4M2MzYTcwNDBjZmE3NzU2YmFkMWZlNTgwYTM1ODJlZmNiZTNjOWE2NDY3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5MzE2MmM4MjA1NTU4ODVmYWJlZWJhNjFiZTUyZTcyNjUzYjNkYmIyM2UyMjZmNjc3ZTE1YTQyODUwN2QwNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzOGVjNTYwOTQwZDU4MTQ0ZmYyNzYyMzJjMzE4YjIxOTQ5NjE4NTdmMDcwN2Q1NzgyMDRjMzVlODViZjcxOTMifQ"
+        },
+        {
+          "resource": "repo://src/mcpath/shell/builtins/files.py#L343-L377",
+          "version": "repo-lines-v1:sha256:963ca5e5990fab290b527740b767c3a2fe3eb0b3954d7ba1f4ec6d496b445533:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNDI5ZjI5OWRiYWZkZGEwNjZiMjY5OTI5NDQ3NWViOTA4OTc1MzdmYzk2OWJlYWU5MDdmMDFhNmI0ODNmNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGU2ZDMxNGZlM2MyNzUzNDQ4M2MzYTcwNDBjZmE3NzU2YmFkMWZlNTgwYTM1ODJlZmNiZTNjOWE2NDY3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhODJlYmU5ZWQ0MDdjM2E2YmE0YjAwMzQyOTJiYWE1MmMxMWNlNWFlMjg2MTA3NDAyZGU0NzkyZWVlY2FjZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmOGJmNWFiMmIwZWJiN2VmMTNlNGJjNDlmNjdhZWFjYzFhYTkzODk2OTNhYzkyMzJjZWU5NjZkZTcwNWNlNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_742799035cac4ba7a74c564da4eb6bd7",
+      "statement": "Builtin compatibility tests run identical fixtures through real Bash/GNU tools in the C locale and mcpath, compare stdout, stderr, and exit status separately, and additionally compare complete resulting trees for mutating commands.",
+      "evidence": [
+        {
+          "resource": "repo://tests/shell/test_builtins.py#L1-L13",
+          "version": "repo-lines-v1:sha256:01b8ed14e409d99ed40fa4693350872e7024d0d688a9294854c1ff7d005b5431:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZTUxYjU0ZTMwY2ZjYTI5OGNkZTJlZGYzYmRjMjcxYTJhNjA5NDk4MzVmNjNmNzVjNzA5MTc3MWY2NTg4NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDNlY2RkNGE0ZDEwZjE5YzczZmQ0MmZkMTI0MzdmZDMzNTRhODI2ODE2MDVkYTUyNTVhOTdhMzkwNjhkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxOWZmZTVlOWY4YTNjM2IxZmRlN2I3YjMxY2U4MzBkMGI2NDZmNDBlZDcxYmRmZTQxZDVlYTA3YzJjNjVmYTIifQ"
+        },
+        {
+          "resource": "repo://tests/shell/test_builtins.py#L315-L322",
+          "version": "repo-lines-v1:sha256:27b67590794523429475db41054bb76ba28d53c341ed6665dfcdf27e7d34121e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWY2Y2Q5YWJmMGE4OWQ3YTA5YWI4YjE1YmZmOGMzYjJmZTVkMmVhMjYxNTRhNDNkNDdhMGExOTRlNmNjNGIyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc1ZDk5MjU3YjY3ZmRhZmYwZjE1MGQ4MGMxMzFkNTRhNjVhZWNiNTU0NTUwNzA1OTBlNGIwNTQxNGM0MGJjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjIwNTUxNDdkNTM4YzhhZGRlMzA2OTc2NjJiY2NlY2ZmY2NjYjM5Y2FmY2U1MzcyODc3YjMzYjY4Mjc0ZDZlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://tests/shell/test_builtins.py#L66-L96",
+          "version": "repo-lines-v1:sha256:4e4ee42b056fd0f174ef5bc72c87d2a72824540b1225ee326b4955ea1bc5b9d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZjM2NmI5YmQ5YThkMGYzNDBhMmJjMGJlMWUyMmVlYTIwNTY4ZGQ3OGE0NTI4MWI3MjFiMzBmMjJkMDg3ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5NzJlMjJkODE3YzVlN2M3YTgyYmExODZiODg2ZDQyMTNkMzJmNzcwOWNiMDZhYzBlNGViYTEwYWE1N2IyYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhOWJiNGIyM2UxY2ZlN2MyZWYwZjAyZjE1NWM4NzI2ODY0ZDNlMDUxNTQyZmQzNTdjNzhkZjZhMTBhNGMzYWYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-28T15:38:38.058Z"
+  }
+}
